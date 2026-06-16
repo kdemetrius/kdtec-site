@@ -306,8 +306,8 @@
       padding: 142px 0 74px;
       color: var(--branco);
       background:
-        radial-gradient(circle at 78% 32%, rgba(22, 135, 255, 0.24), transparent 31%),
-        radial-gradient(circle at 72% 64%, rgba(255, 122, 0, 0.12), transparent 23%),
+        radial-gradient(circle at 79% 33%, rgba(22, 135, 255, 0.24), transparent 31%),
+        radial-gradient(circle at 73% 68%, rgba(255, 122, 0, 0.12), transparent 23%),
         linear-gradient(125deg, #020b16 0%, #04182e 54%, #082f59 100%);
       overflow: hidden;
     }
@@ -340,13 +340,13 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(510px, 1.1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(430px, 0.9fr);
       align-items: center;
-      gap: 52px;
+      gap: 58px;
     }
 
     .hero-conteudo {
-      max-width: 650px;
+      max-width: 720px;
     }
 
     .hero-selo {
@@ -375,8 +375,8 @@
     }
 
     .hero h1 {
-      max-width: 650px;
-      font-size: clamp(2.8rem, 3.95vw, 3.95rem);
+      max-width: 720px;
+      font-size: clamp(2.85rem, 4.15vw, 4.05rem);
       line-height: 1.08;
       letter-spacing: -2.35px;
       text-wrap: balance;
@@ -392,7 +392,7 @@
     }
 
     .hero-texto {
-      max-width: 610px;
+      max-width: 650px;
       margin-top: 23px;
       color: #c6d2e0;
       font-size: 1.04rem;
@@ -409,8 +409,8 @@
     .hero-diferenciais {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      max-width: 760px;
+      gap: 18px;
+      max-width: 780px;
       margin-top: 42px;
     }
 
@@ -438,21 +438,21 @@
       display: block;
       margin-bottom: 4px;
       color: var(--branco);
-      font-size: 0.84rem;
+      font-size: 0.86rem;
     }
 
     .diferencial span {
       display: block;
       color: #aab8c8;
-      font-size: 0.71rem;
+      font-size: 0.72rem;
       line-height: 1.5;
     }
 
-    /* HERO COM IMAGEM INTEGRADA */
+    /* HERO ARTE EM PEÇAS */
 
     .hero-arte {
       position: relative;
-      min-height: 520px;
+      min-height: 500px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -462,92 +462,208 @@
     .hero-arte::before {
       content: "";
       position: absolute;
-      inset: -80px -80px -80px -120px;
-      z-index: 0;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
       background:
-        radial-gradient(circle at 58% 44%, rgba(22, 135, 255, 0.26), transparent 38%),
-        radial-gradient(circle at 62% 40%, rgba(255, 122, 0, 0.14), transparent 24%);
-      filter: blur(4px);
+        radial-gradient(circle, rgba(22, 135, 255, 0.20), rgba(22, 135, 255, 0.04) 46%, transparent 68%);
+      filter: blur(6px);
       pointer-events: none;
     }
 
-    .hero-arte::after {
-      content: "";
+    .rede-svg {
       position: absolute;
-      inset: auto -80px 0 -160px;
-      z-index: 1;
-      height: 190px;
-      background:
-        linear-gradient(
-          to top,
-          rgba(2, 11, 22, 0.82),
-          rgba(2, 11, 22, 0.36) 48%,
-          transparent
-        );
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.9;
       pointer-events: none;
     }
 
-    .hero-imagem-integrada {
-      position: relative;
-      z-index: 2;
-      width: min(100%, 760px);
-      transform: translateX(14px) scale(1.05);
+    .nuvem-laranja {
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      z-index: 6;
+      width: 150px;
+      height: 92px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--branco);
       filter:
-        drop-shadow(0 36px 55px rgba(0, 0, 0, 0.38))
-        drop-shadow(0 0 42px rgba(22, 135, 255, 0.13));
-      opacity: 0.98;
-      mask-image:
-        linear-gradient(90deg, transparent 0%, black 10%, black 84%, transparent 100%),
-        linear-gradient(to bottom, transparent 0%, black 8%, black 84%, transparent 100%);
-      mask-composite: intersect;
-      -webkit-mask-image:
-        linear-gradient(90deg, transparent 0%, black 10%, black 84%, transparent 100%),
-        linear-gradient(to bottom, transparent 0%, black 8%, black 84%, transparent 100%);
-      -webkit-mask-composite: source-in;
+        drop-shadow(0 0 14px rgba(255, 122, 0, 0.45))
+        drop-shadow(0 16px 35px rgba(0, 0, 0, 0.28));
     }
 
-    .hero-imagem-integrada img {
+    .nuvem-laranja svg {
+      width: 150px;
+      height: 92px;
+      fill: rgba(255, 122, 0, 0.08);
+      stroke: var(--laranja);
+      stroke-width: 2.8;
+    }
+
+    .nuvem-laranja .icone {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      color: var(--branco);
+      stroke-width: 1.7;
+    }
+
+    .telefone-ip {
+      position: relative;
+      z-index: 5;
+      width: 330px;
+      margin-top: 88px;
+      transform: rotate(-1.5deg);
+      filter:
+        drop-shadow(0 32px 44px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 38px rgba(22, 135, 255, 0.12));
+    }
+
+    .telefone-fone {
+      position: absolute;
+      left: -64px;
+      top: 26px;
+      width: 86px;
+      height: 255px;
+      border-radius: 44px;
+      background:
+        linear-gradient(145deg, #263f56, #081321 58%, #03070d);
+      box-shadow:
+        inset 10px 0 18px rgba(255, 255, 255, 0.05),
+        inset -14px 0 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .telefone-corpo {
+      position: relative;
       width: 100%;
+      min-height: 306px;
+      padding: 30px 30px 25px;
+      border: 1px solid rgba(93, 181, 255, 0.32);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 65% 25%, rgba(22, 135, 255, 0.12), transparent 33%),
+        linear-gradient(145deg, #172c42, #071322 56%, #020812);
+      box-shadow:
+        inset 0 0 34px rgba(255, 255, 255, 0.055),
+        0 0 60px rgba(22, 135, 255, 0.14);
+    }
+
+    .telefone-tela {
+      height: 108px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(93, 181, 255, 0.24);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(22, 135, 255, 0.15), transparent 45%),
+        linear-gradient(145deg, #010d1a, #092848);
+      box-shadow: inset 0 0 30px rgba(22, 135, 255, 0.08);
+    }
+
+    .telefone-tela img {
+      width: 145px;
       height: auto;
       object-fit: contain;
+      filter: drop-shadow(0 7px 12px rgba(0, 0, 0, 0.38));
     }
 
-    .hero-luz-laranja {
-      position: absolute;
-      z-index: 1;
-      top: 85px;
-      left: 48%;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
+    .telefone-teclas {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+      width: 190px;
+      margin: 24px 0 0 auto;
+    }
+
+    .telefone-teclas span {
+      height: 25px;
+      border-radius: 7px;
       background:
-        radial-gradient(
-          circle,
-          rgba(255, 122, 0, 0.28),
-          rgba(255, 122, 0, 0.08) 42%,
-          transparent 70%
-        );
-      filter: blur(10px);
-      pointer-events: none;
+        linear-gradient(145deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.035));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 -5px 8px rgba(0, 0, 0, 0.24);
     }
 
-    .hero-luz-azul {
+    .telefone-direcional {
       position: absolute;
-      z-index: 1;
-      right: 20px;
+      right: 34px;
       bottom: 40px;
-      width: 360px;
-      height: 260px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background:
-        radial-gradient(
-          circle,
-          rgba(22, 135, 255, 0.22),
-          rgba(22, 135, 255, 0.06) 42%,
-          transparent 72%
-        );
-      filter: blur(16px);
-      pointer-events: none;
+        radial-gradient(circle at 38% 34%, rgba(255, 255, 255, 0.12), transparent 22%),
+        linear-gradient(145deg, #2d445c, #0a1422);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.04);
+    }
+
+    .ponto-rede {
+      position: absolute;
+      z-index: 7;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--azul-claro);
+      border: 1px solid rgba(93, 181, 255, 0.62);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.07), transparent 28%),
+        rgba(4, 28, 53, 0.68);
+      box-shadow:
+        0 0 22px rgba(22, 135, 255, 0.22),
+        0 14px 32px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(8px);
+    }
+
+    .ponto-rede.whats {
+      color: #42e275;
+      border-color: rgba(66, 226, 117, 0.55);
+      box-shadow:
+        0 0 22px rgba(66, 226, 117, 0.18),
+        0 14px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .ponto-rede.laranja {
+      color: var(--laranja-claro);
+      border-color: rgba(255, 122, 0, 0.68);
+      box-shadow:
+        0 0 22px rgba(255, 122, 0, 0.22),
+        0 14px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .ponto-rede .icone {
+      width: 29px;
+      height: 29px;
+    }
+
+    .ponto-1 {
+      top: 130px;
+      left: 36px;
+    }
+
+    .ponto-2 {
+      top: 112px;
+      right: 40px;
+    }
+
+    .ponto-3 {
+      right: 34px;
+      top: 252px;
+    }
+
+    .ponto-4 {
+      right: 75px;
+      bottom: 36px;
+      border-radius: 18px;
     }
 
     /* SERVIÇOS */
@@ -1026,7 +1142,7 @@
       }
 
       .hero-grid {
-        grid-template-columns: minmax(0, 1fr) 470px;
+        grid-template-columns: minmax(0, 1fr) 430px;
         gap: 38px;
       }
 
@@ -1101,13 +1217,7 @@
       }
 
       .hero-arte {
-        min-height: 430px;
-        margin-top: 8px;
-      }
-
-      .hero-imagem-integrada {
-        width: min(100%, 700px);
-        transform: translateX(0) scale(1.02);
+        min-height: 470px;
       }
 
       .servicos-grid {
@@ -1164,19 +1274,90 @@
       }
 
       .hero-arte {
-        min-height: 340px;
-        margin-top: 18px;
+        min-height: 390px;
+        transform: scale(0.92);
+        transform-origin: center top;
       }
 
-      .hero-imagem-integrada {
-        width: 112%;
-        transform: translateX(0) scale(1);
-        mask-image:
-          linear-gradient(90deg, transparent 0%, black 8%, black 90%, transparent 100%),
-          linear-gradient(to bottom, transparent 0%, black 8%, black 86%, transparent 100%);
-        -webkit-mask-image:
-          linear-gradient(90deg, transparent 0%, black 8%, black 90%, transparent 100%),
-          linear-gradient(to bottom, transparent 0%, black 8%, black 86%, transparent 100%);
+      .telefone-ip {
+        width: 260px;
+        margin-top: 76px;
+      }
+
+      .telefone-fone {
+        left: -42px;
+        width: 60px;
+        height: 208px;
+      }
+
+      .telefone-corpo {
+        min-height: 250px;
+        padding: 23px 21px 20px;
+      }
+
+      .telefone-tela {
+        height: 88px;
+      }
+
+      .telefone-tela img {
+        width: 118px;
+      }
+
+      .telefone-teclas {
+        width: 145px;
+        gap: 7px;
+      }
+
+      .telefone-teclas span {
+        height: 22px;
+      }
+
+      .telefone-direcional {
+        width: 56px;
+        height: 56px;
+        right: 28px;
+        bottom: 36px;
+      }
+
+      .nuvem-laranja {
+        width: 112px;
+        height: 78px;
+        top: 18px;
+      }
+
+      .nuvem-laranja svg {
+        width: 112px;
+        height: 78px;
+      }
+
+      .ponto-rede {
+        width: 50px;
+        height: 50px;
+      }
+
+      .ponto-rede .icone {
+        width: 23px;
+        height: 23px;
+      }
+
+      .ponto-1 {
+        top: 105px;
+        left: 10px;
+      }
+
+      .ponto-2 {
+        top: 91px;
+        right: 10px;
+      }
+
+      .ponto-3 {
+        right: 22px;
+        top: 205px;
+      }
+
+      .ponto-4 {
+        right: 4px;
+        bottom: 46px;
       }
 
       section {
@@ -1353,11 +1534,74 @@
 
         <div class="hero-arte" aria-hidden="true">
 
-          <div class="hero-luz-laranja"></div>
-          <div class="hero-luz-azul"></div>
+          <svg class="rede-svg" viewBox="0 0 560 500" preserveAspectRatio="none">
+            <path d="M80 330 C150 240 250 330 310 220 S440 150 500 70" stroke="rgba(22,135,255,.35)" stroke-width="2" fill="none"/>
+            <path d="M120 120 C215 175 265 95 360 145 S470 230 520 300" stroke="rgba(255,122,0,.32)" stroke-width="2" stroke-dasharray="6 8" fill="none"/>
+            <path d="M120 400 L245 305 L365 355 L485 260" stroke="rgba(93,181,255,.22)" stroke-width="2" fill="none"/>
+            <circle cx="120" cy="400" r="5" fill="#1687ff"/>
+            <circle cx="245" cy="305" r="5" fill="#ff7a00"/>
+            <circle cx="365" cy="355" r="5" fill="#1687ff"/>
+            <circle cx="485" cy="260" r="5" fill="#ff7a00"/>
+          </svg>
 
-          <div class="hero-imagem-integrada">
-            <img src="assets/img/hero-kdtec.png" alt="">
+          <div class="nuvem-laranja">
+            <svg viewBox="0 0 160 100" aria-hidden="true">
+              <path d="M48 76H120c18 0 30-11 30-27 0-15-11-26-26-27C118 9 105 2 90 2 74 2 60 12 55 27c-3-1-7-2-11-2-17 0-31 13-31 30 0 13 8 21 35 21Z"/>
+            </svg>
+
+            <svg class="icone" viewBox="0 0 24 24">
+              <path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.5A3.3 3.3 0 0 0 7 18Z"/>
+              <path d="M10 13h4"/>
+            </svg>
+          </div>
+
+          <div class="ponto-rede ponto-1">
+            <svg class="icone" viewBox="0 0 24 24">
+              <rect x="7" y="3" width="10" height="18" rx="2"/>
+              <path d="M10 17h4"/>
+            </svg>
+          </div>
+
+          <div class="ponto-rede ponto-2">
+            <svg class="icone" viewBox="0 0 24 24">
+              <path d="M7 9a5 5 0 0 1 10 0"/>
+              <path d="M7 9h10v9H7z"/>
+              <path d="M10 13h.01M14 13h.01"/>
+            </svg>
+          </div>
+
+          <div class="ponto-rede ponto-3 whats">
+            <svg class="icone" viewBox="0 0 24 24">
+              <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
+            </svg>
+          </div>
+
+          <div class="ponto-rede ponto-4 laranja">
+            <svg class="icone" viewBox="0 0 24 24">
+              <rect x="4" y="5" width="16" height="5" rx="1"/>
+              <rect x="4" y="14" width="16" height="5" rx="1"/>
+              <path d="M7 7.5h.01M7 16.5h.01"/>
+            </svg>
+          </div>
+
+          <div class="telefone-ip">
+            <div class="telefone-fone"></div>
+
+            <div class="telefone-corpo">
+
+              <div class="telefone-tela">
+                <img src="assets/img/logo-kdtec.png" alt="">
+              </div>
+
+              <div class="telefone-teclas">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+
+              <div class="telefone-direcional"></div>
+
+            </div>
           </div>
 
         </div>
