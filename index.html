@@ -13,7 +13,7 @@
 
   <meta
     name="description"
-    content="Telefonia IP, automação, redes, servidores e suporte técnico para empresas em Fortaleza e outras localidades."
+    content="Telefonia IP, automação, redes, servidores, monitoramento e suporte técnico para empresas."
   >
 
   <meta name="theme-color" content="#03101f">
@@ -40,9 +40,9 @@
       --cinza: #aeb9c8;
       --texto: #172033;
       --texto-secundario: #667085;
-      --borda-clara: #e6eaf0;
+      --borda-clara: #e5eaf1;
       --borda-escura: rgba(255, 255, 255, 0.12);
-      --sombra: 0 20px 55px rgba(8, 22, 42, 0.14);
+      --sombra: 0 22px 60px rgba(5, 20, 40, 0.16);
       --largura: 1240px;
     }
 
@@ -108,7 +108,7 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(3, 16, 31, 0.92);
+      background: rgba(3, 16, 31, 0.93);
       border-bottom: 1px solid var(--borda-escura);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -119,7 +119,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 36px;
+      gap: 34px;
     }
 
     .logo {
@@ -129,7 +129,7 @@
     }
 
     .logo-imagem {
-      width: 170px;
+      width: 174px;
       height: 70px;
       object-fit: contain;
       object-position: left center;
@@ -139,14 +139,14 @@
     .site-nav {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 30px;
       margin-left: auto;
     }
 
     .site-nav a {
       position: relative;
-      color: #e8eef6;
-      font-size: 0.82rem;
+      color: #e7edf5;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
@@ -178,12 +178,9 @@
       border: 1px solid var(--laranja);
       border-radius: 999px;
       color: var(--branco);
-      font-size: 0.87rem;
+      font-size: 0.86rem;
       font-weight: 700;
-      transition:
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+      transition: 0.25s ease;
     }
 
     .botao-header:hover {
@@ -238,19 +235,19 @@
 
     .hero {
       position: relative;
-      min-height: 700px;
-      padding: 142px 0 76px;
+      min-height: 690px;
+      padding: 142px 0 72px;
       color: var(--branco);
       background:
         radial-gradient(
-          circle at 83% 30%,
-          rgba(22, 135, 255, 0.22),
+          circle at 82% 32%,
+          rgba(22, 135, 255, 0.23),
           transparent 30%
         ),
         radial-gradient(
-          circle at 74% 68%,
-          rgba(255, 122, 0, 0.10),
-          transparent 24%
+          circle at 73% 67%,
+          rgba(255, 122, 0, 0.1),
+          transparent 23%
         ),
         linear-gradient(
           125deg,
@@ -265,7 +262,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.3;
+      opacity: 0.28;
       pointer-events: none;
       background-image:
         linear-gradient(
@@ -278,22 +275,15 @@
           transparent 1px
         );
       background-size: 48px 48px;
-      mask-image:
-        linear-gradient(
-          to right,
-          transparent,
-          black 45%,
-          black
-        );
     }
 
     .hero-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
+      grid-template-columns: minmax(0, 1.08fr) minmax(400px, 0.92fr);
       align-items: center;
-      gap: 72px;
+      gap: 65px;
     }
 
     .hero-conteudo {
@@ -304,13 +294,13 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      margin-bottom: 23px;
+      margin-bottom: 22px;
       padding: 8px 14px;
       border: 1px solid rgba(255, 122, 0, 0.55);
       border-radius: 999px;
       color: var(--laranja-claro);
       background: rgba(255, 122, 0, 0.07);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 800;
       letter-spacing: 0.9px;
       text-transform: uppercase;
@@ -327,9 +317,9 @@
 
     .hero h1 {
       max-width: 720px;
-      font-size: clamp(2.8rem, 4.4vw, 4.25rem);
+      font-size: clamp(2.75rem, 4.2vw, 4rem);
       line-height: 1.08;
-      letter-spacing: -2.4px;
+      letter-spacing: -2.3px;
       text-wrap: balance;
     }
 
@@ -344,9 +334,9 @@
 
     .hero-texto {
       max-width: 650px;
-      margin-top: 24px;
+      margin-top: 23px;
       color: #c6d2e0;
-      font-size: clamp(1rem, 1.2vw, 1.08rem);
+      font-size: 1.04rem;
       line-height: 1.75;
     }
 
@@ -354,7 +344,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 32px;
+      margin-top: 31px;
     }
 
     .botao {
@@ -366,12 +356,9 @@
       padding: 0 24px;
       border: 0;
       border-radius: 9px;
-      font-size: 0.92rem;
+      font-size: 0.91rem;
       font-weight: 800;
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
+      transition: 0.25s ease;
     }
 
     .botao-principal {
@@ -405,13 +392,13 @@
     .hero-diferenciais {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      gap: 21px;
       max-width: 690px;
-      margin-top: 43px;
+      margin-top: 42px;
     }
 
     .diferencial {
-      min-height: 76px;
+      min-height: 74px;
       padding: 4px 10px 4px 15px;
       border-left: 3px solid var(--laranja);
     }
@@ -420,21 +407,21 @@
       display: block;
       margin-bottom: 5px;
       color: var(--branco);
-      font-size: 0.88rem;
+      font-size: 0.87rem;
     }
 
     .diferencial span {
       display: block;
       color: #aab8c8;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       line-height: 1.55;
     }
 
-    /* ILUSTRAÇÃO DO HERO */
+    /* ILUSTRAÇÃO */
 
     .hero-visual {
       position: relative;
-      min-height: 465px;
+      min-height: 445px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -452,13 +439,12 @@
           rgba(22, 135, 255, 0.04) 45%,
           transparent 70%
         );
-      filter: blur(4px);
     }
 
     .visual-orbita {
       position: absolute;
-      width: 400px;
-      height: 400px;
+      width: 390px;
+      height: 390px;
       border: 1px solid rgba(93, 181, 255, 0.24);
       border-radius: 50%;
     }
@@ -483,9 +469,9 @@
     .telefone-card {
       position: relative;
       z-index: 3;
-      width: 275px;
-      min-height: 320px;
-      padding: 30px 28px 25px;
+      width: 270px;
+      min-height: 315px;
+      padding: 30px 28px 24px;
       border: 1px solid rgba(93, 181, 255, 0.33);
       border-radius: 30px;
       background:
@@ -500,7 +486,7 @@
     }
 
     .telefone-tela {
-      height: 105px;
+      height: 104px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -513,13 +499,11 @@
           rgba(1, 13, 26, 0.95),
           rgba(9, 40, 72, 0.95)
         );
-      box-shadow: inset 0 0 30px rgba(22, 135, 255, 0.08);
     }
 
     .telefone-tela-logo {
       font-size: 1.42rem;
       font-weight: 800;
-      letter-spacing: 0.6px;
     }
 
     .telefone-tela-logo span {
@@ -529,7 +513,7 @@
     .telefone-tela small {
       margin-top: 6px;
       color: var(--azul-claro);
-      font-size: 0.68rem;
+      font-size: 0.67rem;
     }
 
     .telefone-teclas {
@@ -550,7 +534,6 @@
           rgba(255, 255, 255, 0.03)
         );
       border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: inset 0 -4px 7px rgba(0, 0, 0, 0.2);
     }
 
     .telefone-base {
@@ -565,8 +548,8 @@
     .visual-ponto {
       position: absolute;
       z-index: 4;
-      width: 68px;
-      height: 68px;
+      width: 66px;
+      height: 66px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -583,23 +566,23 @@
     }
 
     .visual-ponto-1 {
-      top: 30px;
-      right: 70px;
+      top: 28px;
+      right: 62px;
     }
 
     .visual-ponto-2 {
-      top: 95px;
-      left: 15px;
+      top: 92px;
+      left: 10px;
     }
 
     .visual-ponto-3 {
-      right: 20px;
-      bottom: 40px;
+      right: 15px;
+      bottom: 37px;
     }
 
     .visual-ponto-4 {
-      left: 12px;
-      bottom: 55px;
+      left: 8px;
+      bottom: 52px;
     }
 
     /* SEÇÕES */
@@ -616,7 +599,7 @@
 
     .secao-tag {
       color: var(--laranja);
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 800;
       letter-spacing: 1.3px;
       text-transform: uppercase;
@@ -649,16 +632,14 @@
 
     .servico-card {
       position: relative;
-      min-height: 285px;
+      min-height: 280px;
       padding: 31px;
       border: 1px solid var(--borda-clara);
       border-radius: 17px;
       background: var(--branco);
       box-shadow: 0 12px 35px rgba(23, 32, 51, 0.055);
       overflow: hidden;
-      transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease;
+      transition: 0.28s ease;
     }
 
     .servico-card::before {
@@ -726,29 +707,140 @@
       font-weight: 800;
     }
 
-    .servico-link span {
-      transition: transform 0.2s ease;
+    /* MONITORAMENTO */
+
+    .monitoramento {
+      position: relative;
+      color: var(--branco);
+      background:
+        radial-gradient(
+          circle at 13% 50%,
+          rgba(255, 122, 0, 0.08),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 82% 35%,
+          rgba(22, 135, 255, 0.18),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #020b15,
+          #061b34
+        );
+      overflow: hidden;
     }
 
-    .servico-link:hover span {
-      transform: translateX(4px);
+    .monitoramento-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      align-items: center;
+      gap: 58px;
+    }
+
+    .monitoramento-conteudo {
+      max-width: 530px;
+    }
+
+    .monitoramento h2 {
+      margin-top: 11px;
+      font-size: clamp(2.1rem, 3.6vw, 3.25rem);
+      line-height: 1.14;
+      letter-spacing: -1.5px;
+    }
+
+    .monitoramento-texto {
+      margin-top: 21px;
+      color: #bdcad8;
+      line-height: 1.78;
+    }
+
+    .monitoramento-lista {
+      display: grid;
+      gap: 15px;
+      margin-top: 28px;
+    }
+
+    .monitoramento-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      color: #dce5ef;
+      font-size: 0.91rem;
+    }
+
+    .monitoramento-marcador {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      border-radius: 8px;
+      color: var(--laranja);
+      background: rgba(255, 122, 0, 0.11);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .monitoramento-acoes {
+      margin-top: 30px;
+    }
+
+    .monitoramento-imagem-box {
+      position: relative;
+      padding: 11px;
+      border: 1px solid rgba(93, 181, 255, 0.22);
+      border-radius: 20px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.025)
+        );
+      box-shadow:
+        0 32px 75px rgba(0, 0, 0, 0.38),
+        0 0 60px rgba(22, 135, 255, 0.08);
+    }
+
+    .monitoramento-imagem-box::before {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 4px;
+      top: -2px;
+      left: 38px;
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--azul),
+          var(--laranja)
+        );
+    }
+
+    .monitoramento-imagem {
+      width: 100%;
+      border-radius: 13px;
+      aspect-ratio: 16 / 6.8;
+      object-fit: cover;
+      object-position: top center;
+      background: #11151b;
+    }
+
+    .monitoramento-legenda {
+      margin-top: 13px;
+      padding: 0 5px 2px;
+      color: #8fa1b5;
+      font-size: 0.74rem;
+      text-align: center;
     }
 
     /* SOBRE */
 
     .sobre {
-      color: var(--branco);
-      background:
-        radial-gradient(
-          circle at 85% 45%,
-          rgba(22, 135, 255, 0.2),
-          transparent 34%
-        ),
-        linear-gradient(
-          135deg,
-          #03101f,
-          #071f3b
-        );
+      background: var(--branco);
     }
 
     .sobre-grid {
@@ -769,7 +861,7 @@
     .sobre-texto {
       max-width: 610px;
       margin-top: 20px;
-      color: #becbd9;
+      color: var(--texto-secundario);
       line-height: 1.75;
     }
 
@@ -782,17 +874,15 @@
     .numero-card {
       min-height: 150px;
       padding: 27px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--borda-clara);
       border-radius: 15px;
-      background: rgba(255, 255, 255, 0.045);
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+      background: var(--cinza-claro);
+      transition: 0.25s ease;
     }
 
     .numero-card:hover {
       transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.07);
+      box-shadow: 0 16px 38px rgba(8, 22, 42, 0.08);
     }
 
     .numero-card strong {
@@ -804,7 +894,7 @@
     .numero-card span {
       display: block;
       margin-top: 6px;
-      color: #d4dee9;
+      color: var(--texto-secundario);
       font-size: 0.86rem;
       line-height: 1.55;
     }
@@ -813,7 +903,7 @@
 
     .chamada {
       padding: 76px 0;
-      background: var(--branco);
+      background: var(--cinza-claro);
     }
 
     .chamada-box {
@@ -890,7 +980,7 @@
     }
 
     .logo-rodape {
-      width: 176px;
+      width: 178px;
       height: auto;
       margin-bottom: 18px;
       filter: drop-shadow(0 7px 15px rgba(0, 0, 0, 0.35));
@@ -914,10 +1004,6 @@
       font-size: 0.87rem;
     }
 
-    .footer-links a {
-      transition: color 0.2s ease;
-    }
-
     .footer-links a:hover {
       color: var(--laranja);
     }
@@ -930,7 +1016,7 @@
       font-size: 0.78rem;
     }
 
-    /* WHATSAPP FLUTUANTE */
+    /* WHATSAPP */
 
     .whatsapp-flutuante {
       position: fixed;
@@ -946,46 +1032,38 @@
       color: var(--branco);
       background: #25d366;
       box-shadow: 0 14px 35px rgba(0, 0, 0, 0.27);
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+      transition: 0.25s ease;
     }
 
     .whatsapp-flutuante:hover {
       transform: translateY(-4px) scale(1.04);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.33);
     }
 
     .whatsapp-flutuante .icone {
       width: 29px;
       height: 29px;
-      stroke-width: 1.7;
     }
 
     /* RESPONSIVO */
 
     @media (max-width: 1050px) {
-      .site-nav {
-        gap: 23px;
-      }
-
       .hero-grid {
         grid-template-columns: minmax(0, 1fr) 390px;
         gap: 38px;
       }
 
-      .hero h1 {
-        font-size: clamp(2.65rem, 5vw, 3.7rem);
-      }
-
       .visual-orbita {
-        width: 360px;
-        height: 360px;
+        width: 350px;
+        height: 350px;
       }
 
       .telefone-card {
         width: 245px;
-        min-height: 300px;
+        min-height: 295px;
+      }
+
+      .monitoramento-grid {
+        gap: 38px;
       }
     }
 
@@ -1037,20 +1115,25 @@
       }
 
       .hero-grid,
-      .sobre-grid {
+      .sobre-grid,
+      .monitoramento-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-conteudo {
-        max-width: 760px;
-      }
-
       .hero-visual {
-        min-height: 430px;
+        min-height: 420px;
       }
 
       .servicos-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .monitoramento-conteudo {
+        max-width: 700px;
+      }
+
+      .monitoramento-imagem-box {
+        max-width: 900px;
       }
     }
 
@@ -1072,17 +1155,13 @@
         padding: 112px 0 65px;
       }
 
-      .hero-selo {
-        font-size: 0.68rem;
-      }
-
       .hero h1 {
-        font-size: clamp(2.45rem, 12vw, 3.2rem);
+        font-size: clamp(2.4rem, 12vw, 3.15rem);
         letter-spacing: -1.8px;
       }
 
       .hero-texto {
-        font-size: 0.98rem;
+        font-size: 0.97rem;
       }
 
       .hero-botoes {
@@ -1104,58 +1183,37 @@
       }
 
       .hero-visual {
-        min-height: 370px;
+        min-height: 355px;
       }
 
       .visual-orbita {
-        width: 300px;
-        height: 300px;
+        width: 295px;
+        height: 295px;
       }
 
       .telefone-card {
-        width: 215px;
-        min-height: 275px;
-        padding: 24px 22px 21px;
+        width: 210px;
+        min-height: 270px;
+        padding: 23px 21px 20px;
       }
 
       .telefone-tela {
-        height: 90px;
+        height: 88px;
       }
 
       .telefone-teclas {
-        width: 135px;
+        width: 132px;
         gap: 7px;
       }
 
       .telefone-teclas span {
-        height: 24px;
+        height: 23px;
       }
 
       .visual-ponto {
-        width: 55px;
-        height: 55px;
-        border-radius: 16px;
-      }
-
-      .visual-ponto .icone {
-        width: 21px;
-        height: 21px;
-      }
-
-      .visual-ponto-1 {
-        right: 10px;
-      }
-
-      .visual-ponto-2 {
-        left: 0;
-      }
-
-      .visual-ponto-3 {
-        right: 0;
-      }
-
-      .visual-ponto-4 {
-        left: 0;
+        width: 53px;
+        height: 53px;
+        border-radius: 15px;
       }
 
       section {
@@ -1170,6 +1228,20 @@
 
       .servico-card {
         min-height: auto;
+      }
+
+      .monitoramento-imagem-box {
+        padding: 7px;
+        border-radius: 14px;
+      }
+
+      .monitoramento-imagem {
+        border-radius: 9px;
+        aspect-ratio: 16 / 8;
+      }
+
+      .monitoramento-legenda {
+        font-size: 0.68rem;
       }
 
       .chamada-box {
@@ -1221,6 +1293,7 @@
       <nav class="site-nav" id="menu-principal">
         <a href="#inicio">Início</a>
         <a href="#servicos">Serviços</a>
+        <a href="#monitoramento">Monitoramento</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -1231,11 +1304,6 @@
         target="_blank"
         rel="noopener"
       >
-        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
-          <path d="M8.4 8.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.4 2.4.3.2.5.2.7 0l.8-1c.2-.2.4-.3.7-.2l1.9.9c.3.1.4.3.4.5 0 .4-.2 1.4-.9 2-.6.5-1.3.8-2.3.5-1.2-.3-2.7-1-4.2-2.4-1.2-1.1-2.2-2.5-2.6-3.6-.4-1-.1-2.2.2-2.8Z"/>
-        </svg>
-
         WhatsApp
       </a>
 
@@ -1269,8 +1337,9 @@
           </h1>
 
           <p class="hero-texto">
-            Telefonia IP, automação, redes e soluções completas em TI
-            para empresas que buscam eficiência, segurança e crescimento.
+            Telefonia IP, automação, redes, monitoramento e soluções
+            completas em TI para empresas que buscam eficiência,
+            segurança e crescimento.
           </p>
 
           <div class="hero-botoes">
@@ -1281,11 +1350,6 @@
               target="_blank"
               rel="noopener"
             >
-              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
-                <path d="M8.4 8.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.4 2.4.3.2.5.2.7 0l.8-1c.2-.2.4-.3.7-.2l1.9.9c.3.1.4.3.4.5 0 .4-.2 1.4-.9 2-.6.5-1.3.8-2.3.5-1.2-.3-2.7-1-4.2-2.4-1.2-1.1-2.2-2.5-2.6-3.6-.4-1-.1-2.2.2-2.8Z"/>
-              </svg>
-
               Fale conosco no WhatsApp
             </a>
 
@@ -1332,7 +1396,7 @@
           <div class="visual-ponto visual-ponto-2 laranja">
 
             <svg class="icone" viewBox="0 0 24 24">
-              <path d="M7 4h10v16H7z"/>
+              <rect x="7" y="3" width="10" height="18" rx="2"/>
               <path d="M10 17h4"/>
             </svg>
 
@@ -1342,7 +1406,7 @@
 
             <svg class="icone" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="3"/>
-              <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/>
+              <path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>
             </svg>
 
           </div>
@@ -1350,9 +1414,7 @@
           <div class="visual-ponto visual-ponto-4">
 
             <svg class="icone" viewBox="0 0 24 24">
-              <path d="M8 3h8a2 2 0 0 1 2 2v14H6V5a2 2 0 0 1 2-2Z"/>
-              <path d="M9 7h6"/>
-              <path d="M9 11h.01M12 11h.01M15 11h.01M9 14h.01M12 14h.01M15 14h.01"/>
+              <path d="M6.6 2h3l1.5 5-2.2 1.4a16 16 0 0 0 6.7 6.7l1.4-2.2 5 1.5v3a3 3 0 0 1-3.2 3A18.8 18.8 0 0 1 3.6 5.2 3 3 0 0 1 6.6 2Z"/>
             </svg>
 
           </div>
@@ -1360,11 +1422,13 @@
           <div class="telefone-card">
 
             <div class="telefone-tela">
+
               <div class="telefone-tela-logo">
                 <span>KD</span>TEC
               </div>
 
               <small>Telefonia IP em nuvem</small>
+
             </div>
 
             <div class="telefone-teclas">
@@ -1402,8 +1466,8 @@
           </h2>
 
           <p>
-            Tecnologia aplicada de forma prática para melhorar a comunicação,
-            a segurança e a produtividade do seu negócio.
+            Tecnologia aplicada de forma prática para melhorar
+            a comunicação, a segurança e a produtividade do seu negócio.
           </p>
 
         </div>
@@ -1426,7 +1490,7 @@
             </p>
 
             <a class="servico-link" href="#contato">
-              Saiba mais <span>→</span>
+              Saiba mais →
             </a>
 
           </article>
@@ -1436,7 +1500,6 @@
             <div class="servico-icone">
               <svg class="icone" viewBox="0 0 24 24">
                 <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
-                <path d="M8.4 8.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.4 2.4.3.2.5.2.7 0l.8-1"/>
               </svg>
             </div>
 
@@ -1448,7 +1511,7 @@
             </p>
 
             <a class="servico-link" href="#contato">
-              Saiba mais <span>→</span>
+              Saiba mais →
             </a>
 
           </article>
@@ -1470,7 +1533,7 @@
             </p>
 
             <a class="servico-link" href="#contato">
-              Saiba mais <span>→</span>
+              Saiba mais →
             </a>
 
           </article>
@@ -1491,7 +1554,7 @@
             </p>
 
             <a class="servico-link" href="#contato">
-              Saiba mais <span>→</span>
+              Saiba mais →
             </a>
 
           </article>
@@ -1501,7 +1564,7 @@
             <div class="servico-icone">
               <svg class="icone" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="3"/>
-                <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9"/>
+                <path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>
               </svg>
             </div>
 
@@ -1513,7 +1576,7 @@
             </p>
 
             <a class="servico-link" href="#contato">
-              Saiba mais <span>→</span>
+              Saiba mais →
             </a>
 
           </article>
@@ -1535,12 +1598,84 @@
             </p>
 
             <a class="servico-link" href="#contato">
-              Saiba mais <span>→</span>
+              Saiba mais →
             </a>
 
           </article>
 
         </div>
+
+      </div>
+    </section>
+
+    <section class="monitoramento" id="monitoramento">
+      <div class="container monitoramento-grid">
+
+        <div class="monitoramento-conteudo">
+
+          <span class="secao-tag">
+            Monitoramento operacional
+          </span>
+
+          <h2>
+            Visibilidade em tempo real para ambientes de telefonia
+          </h2>
+
+          <p class="monitoramento-texto">
+            A KDTEC desenvolve painéis personalizados para acompanhamento
+            de centrais telefônicas, ramais, troncos, canais e indicadores
+            operacionais. Assim, a equipe técnica identifica alterações
+            rapidamente e acompanha a saúde do ambiente em uma única tela.
+          </p>
+
+          <div class="monitoramento-lista">
+
+            <div class="monitoramento-item">
+              <div class="monitoramento-marcador">01</div>
+              <span>Status visual dos ramais e serviços essenciais.</span>
+            </div>
+
+            <div class="monitoramento-item">
+              <div class="monitoramento-marcador">02</div>
+              <span>Acompanhamento de troncos, canais e disponibilidade.</span>
+            </div>
+
+            <div class="monitoramento-item">
+              <div class="monitoramento-marcador">03</div>
+              <span>Painéis personalizados conforme a operação do cliente.</span>
+            </div>
+
+          </div>
+
+          <div class="monitoramento-acoes">
+
+            <a
+              class="botao botao-principal"
+              href="https://wa.me/5585988446126"
+              target="_blank"
+              rel="noopener"
+            >
+              Conheça esta solução
+            </a>
+
+          </div>
+
+        </div>
+
+        <figure class="monitoramento-imagem-box">
+
+          <img
+            src="assets/img/painel001.png"
+            alt="Painel de monitoramento de telefonia IP desenvolvido pela KDTEC"
+            class="monitoramento-imagem"
+            loading="lazy"
+          >
+
+          <figcaption class="monitoramento-legenda">
+            Exemplo de painel operacional para monitoramento de telefonia IP.
+          </figcaption>
+
+        </figure>
 
       </div>
     </section>
@@ -1604,6 +1739,7 @@
         <div class="chamada-box">
 
           <div>
+
             <h2>
               Vamos melhorar a tecnologia da sua empresa?
             </h2>
@@ -1612,6 +1748,7 @@
               Converse com a KDTEC e descubra uma solução adequada
               para sua estrutura.
             </p>
+
           </div>
 
           <a
@@ -1644,8 +1781,8 @@
           >
 
           <p class="footer-texto">
-            Telefonia IP, automação, redes, servidores e suporte técnico
-            para empresas em Fortaleza e outras localidades.
+            Telefonia IP, automação, redes, servidores, monitoramento
+            e suporte técnico para empresas.
           </p>
 
         </div>
@@ -1659,6 +1796,7 @@
           <div class="footer-links">
             <a href="#inicio">Início</a>
             <a href="#servicos">Serviços</a>
+            <a href="#monitoramento">Monitoramento</a>
             <a href="#sobre">Sobre a KDTEC</a>
             <a href="#contato">Contato</a>
           </div>
@@ -1705,7 +1843,6 @@
   >
     <svg class="icone" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
-      <path d="M8.4 8.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.4 2.4.3.2.5.2.7 0l.8-1c.2-.2.4-.3.7-.2l1.9.9c.3.1.4.3.4.5 0 .4-.2 1.4-.9 2-.6.5-1.3.8-2.3.5-1.2-.3-2.7-1-4.2-2.4-1.2-1.1-2.2-2.5-2.6-3.6-.4-1-.1-2.2.2-2.8Z"/>
     </svg>
   </a>
 
