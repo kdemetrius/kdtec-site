@@ -302,7 +302,7 @@
 
     .hero {
       position: relative;
-      min-height: 705px;
+      min-height: 720px;
       padding: 142px 0 74px;
       color: var(--branco);
       background:
@@ -316,7 +316,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.3;
+      opacity: 0.28;
       pointer-events: none;
       background-image:
         linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
@@ -340,13 +340,13 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.96fr);
+      grid-template-columns: minmax(0, 0.9fr) minmax(510px, 1.1fr);
       align-items: center;
-      gap: 62px;
+      gap: 52px;
     }
 
     .hero-conteudo {
-      max-width: 720px;
+      max-width: 650px;
     }
 
     .hero-selo {
@@ -375,8 +375,8 @@
     }
 
     .hero h1 {
-      max-width: 720px;
-      font-size: clamp(2.85rem, 4.15vw, 4.05rem);
+      max-width: 650px;
+      font-size: clamp(2.8rem, 3.95vw, 3.95rem);
       line-height: 1.08;
       letter-spacing: -2.35px;
       text-wrap: balance;
@@ -392,7 +392,7 @@
     }
 
     .hero-texto {
-      max-width: 650px;
+      max-width: 610px;
       margin-top: 23px;
       color: #c6d2e0;
       font-size: 1.04rem;
@@ -409,8 +409,8 @@
     .hero-diferenciais {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      max-width: 780px;
+      gap: 16px;
+      max-width: 760px;
       margin-top: 42px;
     }
 
@@ -438,232 +438,104 @@
       display: block;
       margin-bottom: 4px;
       color: var(--branco);
-      font-size: 0.86rem;
+      font-size: 0.84rem;
     }
 
     .diferencial span {
       display: block;
       color: #aab8c8;
-      font-size: 0.72rem;
+      font-size: 0.71rem;
       line-height: 1.5;
     }
 
-    /* HERO ARTE */
+    /* HERO COM IMAGEM REAL */
 
     .hero-arte {
       position: relative;
-      min-height: 455px;
+      min-height: 470px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .cidade {
-      position: absolute;
-      inset: auto 0 8px;
-      height: 250px;
-      opacity: 0.5;
-      background:
-        linear-gradient(to top, rgba(2, 11, 22, 0.9), transparent 48%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(93, 181, 255, 0.18) 0 2px,
-          transparent 2px 28px
-        );
-      mask-image: linear-gradient(to top, black, transparent);
-    }
-
-    .rede-linhas {
-      position: absolute;
-      inset: 20px 0 0;
-      opacity: 0.9;
-    }
-
-    .nuvem-central {
-      position: absolute;
-      top: 15px;
-      left: 50%;
-      z-index: 6;
-      width: 142px;
-      height: 94px;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid rgba(255, 122, 0, 0.92);
-      border-radius: 44px;
-      color: var(--branco);
-      background: rgba(255, 122, 0, 0.08);
-      box-shadow:
-        0 0 26px rgba(255, 122, 0, 0.45),
-        inset 0 0 28px rgba(255, 122, 0, 0.1);
-    }
-
-    .nuvem-central::before,
-    .nuvem-central::after {
-      content: "";
-      position: absolute;
-      top: -22px;
-      border: 2px solid rgba(255, 122, 0, 0.92);
-      border-bottom: 0;
-      background: #061a31;
-    }
-
-    .nuvem-central::before {
-      left: 30px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50% 50% 0 0;
-    }
-
-    .nuvem-central::after {
-      right: 30px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50% 50% 0 0;
-    }
-
-    .nuvem-central .icone {
+    .hero-imagem-box {
       position: relative;
-      z-index: 2;
-      width: 35px;
-      height: 35px;
-      color: var(--branco);
-    }
-
-    .telefone-hero {
-      position: relative;
-      z-index: 5;
-      width: 320px;
-      margin-top: 95px;
-      transform: rotate(-1deg);
-      filter: drop-shadow(0 34px 48px rgba(0, 0, 0, 0.48));
-    }
-
-    .telefone-corpo {
-      position: relative;
-      width: 100%;
-      min-height: 292px;
-      padding: 28px 29px 24px;
-      border: 1px solid rgba(93, 181, 255, 0.35);
+      width: min(100%, 690px);
       border-radius: 28px;
-      background:
-        linear-gradient(145deg, #15283c, #060f1c 56%, #020812);
+      overflow: hidden;
+      isolation: isolate;
       box-shadow:
-        inset 0 0 32px rgba(255, 255, 255, 0.055),
-        0 0 60px rgba(22, 135, 255, 0.13);
+        0 35px 90px rgba(0, 0, 0, 0.42),
+        0 0 65px rgba(22, 135, 255, 0.14);
     }
 
-    .telefone-corpo::before {
+    .hero-imagem-box::before {
       content: "";
       position: absolute;
-      left: -55px;
-      top: 18px;
-      width: 72px;
-      height: 245px;
-      border-radius: 42px;
-      background: linear-gradient(145deg, #203950, #060d17);
-      box-shadow:
-        inset 9px 0 18px rgba(255, 255, 255, 0.06),
-        inset -12px 0 18px rgba(0, 0, 0, 0.3);
-    }
-
-    .telefone-tela {
-      height: 104px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(93, 181, 255, 0.25);
-      border-radius: 17px;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
       background:
-        radial-gradient(circle at 50% 30%, rgba(22, 135, 255, 0.14), transparent 45%),
-        linear-gradient(145deg, #010d1a, #092848);
+        linear-gradient(90deg, rgba(2, 11, 22, 0.10), transparent 40%),
+        linear-gradient(to top, rgba(2, 11, 22, 0.22), transparent 45%);
     }
 
-    .telefone-tela img {
-      width: 142px;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 7px 12px rgba(0, 0, 0, 0.35));
-    }
-
-    .telefone-teclas {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 9px;
-      width: 190px;
-      margin: 24px 0 0 auto;
-    }
-
-    .telefone-teclas span {
-      height: 25px;
-      border-radius: 7px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.035));
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: inset 0 -5px 8px rgba(0, 0, 0, 0.24);
-    }
-
-    .telefone-direcional {
+    .hero-imagem-box::after {
+      content: "";
       position: absolute;
-      right: 33px;
-      bottom: 39px;
-      width: 70px;
-      height: 70px;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      border: 1px solid rgba(93, 181, 255, 0.28);
+      border-radius: 28px;
+      box-shadow: inset 0 0 45px rgba(22, 135, 255, 0.13);
+    }
+
+    .hero-imagem {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.02);
+      background: #06162a;
+    }
+
+    .hero-brilho {
+      position: absolute;
+      right: -45px;
+      top: -35px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #2b4258, #0a1422);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.04);
+      background: radial-gradient(circle, rgba(255, 122, 0, 0.28), transparent 68%);
+      filter: blur(6px);
+      pointer-events: none;
     }
 
-    .ponto-rede {
+    .hero-legenda-tecnica {
       position: absolute;
-      z-index: 7;
-      width: 64px;
-      height: 64px;
+      left: 18px;
+      bottom: 18px;
+      z-index: 5;
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: var(--azul-claro);
-      border: 1px solid rgba(93, 181, 255, 0.65);
+      gap: 10px;
+      padding: 10px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      color: #dce8f6;
+      background: rgba(3, 16, 31, 0.72);
+      backdrop-filter: blur(10px);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .hero-legenda-tecnica span {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: rgba(4, 28, 53, 0.64);
-      box-shadow: 0 0 22px rgba(22, 135, 255, 0.22);
-    }
-
-    .ponto-rede.whats {
-      color: #42e275;
-    }
-
-    .ponto-rede.laranja {
-      color: var(--laranja-claro);
-      border-color: rgba(255, 122, 0, 0.7);
-      box-shadow: 0 0 22px rgba(255, 122, 0, 0.22);
-    }
-
-    .ponto-1 {
-      top: 115px;
-      left: 48px;
-    }
-
-    .ponto-2 {
-      top: 95px;
-      right: 55px;
-    }
-
-    .ponto-3 {
-      right: 54px;
-      top: 225px;
-    }
-
-    .ponto-4 {
-      right: 24px;
-      bottom: 55px;
-      border-radius: 18px;
-    }
-
-    .ponto-rede .icone {
-      width: 29px;
-      height: 29px;
+      background: var(--laranja);
+      box-shadow: 0 0 14px rgba(255, 122, 0, 0.9);
     }
 
     /* SERVIÇOS */
@@ -1142,7 +1014,7 @@
       }
 
       .hero-grid {
-        grid-template-columns: minmax(0, 1fr) 430px;
+        grid-template-columns: minmax(0, 1fr) 470px;
         gap: 38px;
       }
 
@@ -1217,7 +1089,8 @@
       }
 
       .hero-arte {
-        min-height: 470px;
+        min-height: auto;
+        margin-top: 22px;
       }
 
       .servicos-grid {
@@ -1273,78 +1146,23 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-arte {
-        min-height: 390px;
+      .hero-imagem-box {
+        border-radius: 18px;
       }
 
-      .telefone-hero {
-        width: 260px;
-        margin-top: 75px;
+      .hero-imagem-box::after {
+        border-radius: 18px;
       }
 
-      .telefone-corpo {
-        min-height: 250px;
+      .hero-imagem {
+        aspect-ratio: 1 / 1;
       }
 
-      .telefone-corpo::before {
-        left: -42px;
-        width: 60px;
-        height: 208px;
-      }
-
-      .telefone-tela {
-        height: 88px;
-      }
-
-      .telefone-teclas {
-        width: 145px;
-        gap: 7px;
-      }
-
-      .telefone-teclas span {
-        height: 22px;
-      }
-
-      .telefone-direcional {
-        width: 56px;
-        height: 56px;
-        right: 28px;
-        bottom: 36px;
-      }
-
-      .nuvem-central {
-        width: 112px;
-        height: 78px;
-      }
-
-      .ponto-rede {
-        width: 50px;
-        height: 50px;
-      }
-
-      .ponto-rede .icone {
-        width: 23px;
-        height: 23px;
-      }
-
-      .ponto-1 {
-        top: 102px;
-        left: 10px;
-      }
-
-      .ponto-2 {
-        top: 91px;
-        right: 10px;
-      }
-
-      .ponto-3 {
-        right: 22px;
-        top: 200px;
-      }
-
-      .ponto-4 {
-        right: 4px;
-        bottom: 46px;
+      .hero-legenda-tecnica {
+        left: 12px;
+        bottom: 12px;
+        font-size: 0.68rem;
+        padding: 8px 10px;
       }
 
       section {
@@ -1521,71 +1339,22 @@
 
         <div class="hero-arte" aria-hidden="true">
 
-          <div class="cidade"></div>
+          <div class="hero-brilho"></div>
 
-          <svg class="rede-linhas" viewBox="0 0 640 460" preserveAspectRatio="none">
-            <path d="M80 320 C170 250 250 335 330 260 S500 225 590 110" stroke="rgba(22,135,255,.35)" stroke-width="2" fill="none"/>
-            <path d="M145 130 C245 190 330 105 430 160 S545 230 600 290" stroke="rgba(255,122,0,.32)" stroke-width="2" stroke-dasharray="5 8" fill="none"/>
-            <path d="M120 370 L260 290 L390 335 L560 250" stroke="rgba(93,181,255,.24)" stroke-width="2" fill="none"/>
-            <circle cx="120" cy="370" r="5" fill="#1687ff"/>
-            <circle cx="260" cy="290" r="5" fill="#ff7a00"/>
-            <circle cx="390" cy="335" r="5" fill="#1687ff"/>
-            <circle cx="560" cy="250" r="5" fill="#ff7a00"/>
-          </svg>
+          <figure class="hero-imagem-box">
 
-          <div class="nuvem-central">
-            <svg class="icone" viewBox="0 0 24 24">
-              <path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.5A3.3 3.3 0 0 0 7 18Z"/>
-              <path d="M10 13h4"/>
-            </svg>
-          </div>
+            <img
+              src="assets/img/hero-kdtec.png"
+              alt=""
+              class="hero-imagem"
+            >
 
-          <div class="ponto-rede ponto-1">
-            <svg class="icone" viewBox="0 0 24 24">
-              <rect x="7" y="3" width="10" height="18" rx="2"/>
-              <path d="M10 17h4"/>
-            </svg>
-          </div>
+            <figcaption class="hero-legenda-tecnica">
+              <span></span>
+              Telefonia IP, nuvem e conectividade
+            </figcaption>
 
-          <div class="ponto-rede ponto-2">
-            <svg class="icone" viewBox="0 0 24 24">
-              <path d="M7 9a5 5 0 0 1 10 0"/>
-              <path d="M7 9h10v9H7z"/>
-              <path d="M10 13h.01M14 13h.01"/>
-            </svg>
-          </div>
-
-          <div class="ponto-rede ponto-3 whats">
-            <svg class="icone" viewBox="0 0 24 24">
-              <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
-            </svg>
-          </div>
-
-          <div class="ponto-rede ponto-4 laranja">
-            <svg class="icone" viewBox="0 0 24 24">
-              <rect x="4" y="5" width="16" height="5" rx="1"/>
-              <rect x="4" y="14" width="16" height="5" rx="1"/>
-              <path d="M7 7.5h.01M7 16.5h.01"/>
-            </svg>
-          </div>
-
-          <div class="telefone-hero">
-            <div class="telefone-corpo">
-
-              <div class="telefone-tela">
-                <img src="assets/img/logo-kdtec.png" alt="">
-              </div>
-
-              <div class="telefone-teclas">
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-              </div>
-
-              <div class="telefone-direcional"></div>
-
-            </div>
-          </div>
+          </figure>
 
         </div>
 
