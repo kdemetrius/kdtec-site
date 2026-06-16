@@ -34,13 +34,12 @@
       --laranja-claro: #ff9c3a;
       --branco: #ffffff;
       --gelo: #f4f7fb;
-      --cinza: #aeb9c8;
       --texto: #172033;
       --texto-suave: #667085;
       --borda-clara: #e5eaf1;
       --borda-escura: rgba(255, 255, 255, 0.12);
-      --sombra: 0 22px 60px rgba(5, 20, 40, 0.16);
       --largura: 1240px;
+      --sombra: 0 22px 60px rgba(5, 20, 40, 0.16);
     }
 
     * {
@@ -225,8 +224,7 @@
       transition: width 0.25s ease;
     }
 
-    .site-nav a:hover::after,
-    .site-nav a:focus-visible::after {
+    .site-nav a:hover::after {
       width: 100%;
     }
 
@@ -340,13 +338,13 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(430px, 0.9fr);
+      grid-template-columns: minmax(0, 0.93fr) minmax(470px, 1.07fr);
       align-items: center;
-      gap: 58px;
+      gap: 56px;
     }
 
     .hero-conteudo {
-      max-width: 720px;
+      max-width: 670px;
     }
 
     .hero-selo {
@@ -375,8 +373,8 @@
     }
 
     .hero h1 {
-      max-width: 720px;
-      font-size: clamp(2.85rem, 4.15vw, 4.05rem);
+      max-width: 670px;
+      font-size: clamp(2.8rem, 3.95vw, 3.95rem);
       line-height: 1.08;
       letter-spacing: -2.35px;
       text-wrap: balance;
@@ -392,7 +390,7 @@
     }
 
     .hero-texto {
-      max-width: 650px;
+      max-width: 620px;
       margin-top: 23px;
       color: #c6d2e0;
       font-size: 1.04rem;
@@ -409,8 +407,8 @@
     .hero-diferenciais {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      max-width: 780px;
+      gap: 16px;
+      max-width: 760px;
       margin-top: 42px;
     }
 
@@ -438,232 +436,429 @@
       display: block;
       margin-bottom: 4px;
       color: var(--branco);
-      font-size: 0.86rem;
+      font-size: 0.84rem;
     }
 
     .diferencial span {
       display: block;
       color: #aab8c8;
-      font-size: 0.72rem;
+      font-size: 0.71rem;
       line-height: 1.5;
     }
 
-    /* HERO ARTE EM PEÇAS */
+    /* HERO ANIMADO */
 
     .hero-arte {
       position: relative;
-      min-height: 500px;
+      min-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: visible;
     }
 
-    .hero-arte::before {
+    .tech-orbita {
+      position: relative;
+      width: min(100%, 560px);
+      height: 520px;
+    }
+
+    .tech-orbita::before {
       content: "";
       position: absolute;
-      width: 520px;
-      height: 520px;
+      inset: 58px 42px 28px;
       border-radius: 50%;
       background:
-        radial-gradient(circle, rgba(22, 135, 255, 0.20), rgba(22, 135, 255, 0.04) 46%, transparent 68%);
-      filter: blur(6px);
-      pointer-events: none;
+        radial-gradient(circle at 50% 46%, rgba(22, 135, 255, 0.22), transparent 36%),
+        radial-gradient(circle at 54% 54%, rgba(255, 122, 0, 0.10), transparent 28%);
+      filter: blur(4px);
+      animation: brilhoCentral 4s ease-in-out infinite alternate;
     }
 
-    .rede-svg {
+    .tech-orbita::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 420px;
+      height: 420px;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(93, 181, 255, 0.16);
+      border-radius: 50%;
+      box-shadow:
+        inset 0 0 42px rgba(22, 135, 255, 0.08),
+        0 0 46px rgba(22, 135, 255, 0.06);
+      animation: orbitaPulso 5s ease-in-out infinite;
+    }
+
+    .linhas-tech {
       position: absolute;
       inset: 0;
+      z-index: 1;
       width: 100%;
       height: 100%;
-      opacity: 0.9;
+      opacity: 0.94;
+      overflow: visible;
+    }
+
+    .linha-azul {
+      stroke: rgba(93, 181, 255, 0.52);
+      stroke-width: 2;
+      stroke-dasharray: 8 10;
+      fill: none;
+      animation: linhaMove 9s linear infinite;
+    }
+
+    .linha-laranja {
+      stroke: rgba(255, 122, 0, 0.58);
+      stroke-width: 2;
+      stroke-dasharray: 5 9;
+      fill: none;
+      animation: linhaMove 7s linear infinite reverse;
+    }
+
+    .linha-suave {
+      stroke: rgba(255, 255, 255, 0.12);
+      stroke-width: 1.4;
+      stroke-dasharray: 4 10;
+      fill: none;
+      animation: linhaMove 12s linear infinite;
+    }
+
+    .ponto-svg {
+      fill: var(--azul-claro);
+      filter: drop-shadow(0 0 8px rgba(93, 181, 255, 0.8));
+      animation: pontoPulso 2.2s ease-in-out infinite;
+    }
+
+    .ponto-svg.laranja {
+      fill: var(--laranja);
+      filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.85));
+      animation-delay: 0.6s;
+    }
+
+    .tech-card-central {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 4;
+      width: 285px;
+      min-height: 190px;
+      transform: translate(-50%, -50%);
+      padding: 26px;
+      border: 1px solid rgba(93, 181, 255, 0.28);
+      border-radius: 26px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.035)),
+        rgba(4, 20, 38, 0.58);
+      box-shadow:
+        0 32px 75px rgba(0, 0, 0, 0.36),
+        inset 0 0 42px rgba(255, 255, 255, 0.035),
+        0 0 58px rgba(22, 135, 255, 0.12);
+      backdrop-filter: blur(17px);
+      -webkit-backdrop-filter: blur(17px);
+      animation: flutuarCentral 4.8s ease-in-out infinite;
+    }
+
+    .tech-card-central::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 28px;
+      width: 98px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--azul), var(--laranja));
+    }
+
+    .tech-card-central::after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      bottom: -42px;
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 122, 0, 0.18), transparent 68%);
       pointer-events: none;
     }
 
-    .nuvem-laranja {
-      position: absolute;
-      top: 28px;
-      left: 50%;
-      z-index: 6;
-      width: 150px;
-      height: 92px;
-      transform: translateX(-50%);
+    .tech-logo-mini {
+      width: 145px;
+      height: 58px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: var(--branco);
-      filter:
-        drop-shadow(0 0 14px rgba(255, 122, 0, 0.45))
-        drop-shadow(0 16px 35px rgba(0, 0, 0, 0.28));
+      margin-bottom: 14px;
     }
 
-    .nuvem-laranja svg {
-      width: 150px;
-      height: 92px;
-      fill: rgba(255, 122, 0, 0.08);
-      stroke: var(--laranja);
-      stroke-width: 2.8;
-    }
-
-    .nuvem-laranja .icone {
-      position: absolute;
-      width: 34px;
-      height: 34px;
-      color: var(--branco);
-      stroke-width: 1.7;
-    }
-
-    .telefone-ip {
-      position: relative;
-      z-index: 5;
-      width: 330px;
-      margin-top: 88px;
-      transform: rotate(-1.5deg);
-      filter:
-        drop-shadow(0 32px 44px rgba(0, 0, 0, 0.45))
-        drop-shadow(0 0 38px rgba(22, 135, 255, 0.12));
-    }
-
-    .telefone-fone {
-      position: absolute;
-      left: -64px;
-      top: 26px;
-      width: 86px;
-      height: 255px;
-      border-radius: 44px;
-      background:
-        linear-gradient(145deg, #263f56, #081321 58%, #03070d);
-      box-shadow:
-        inset 10px 0 18px rgba(255, 255, 255, 0.05),
-        inset -14px 0 18px rgba(0, 0, 0, 0.35);
-    }
-
-    .telefone-corpo {
-      position: relative;
-      width: 100%;
-      min-height: 306px;
-      padding: 30px 30px 25px;
-      border: 1px solid rgba(93, 181, 255, 0.32);
-      border-radius: 30px;
-      background:
-        radial-gradient(circle at 65% 25%, rgba(22, 135, 255, 0.12), transparent 33%),
-        linear-gradient(145deg, #172c42, #071322 56%, #020812);
-      box-shadow:
-        inset 0 0 34px rgba(255, 255, 255, 0.055),
-        0 0 60px rgba(22, 135, 255, 0.14);
-    }
-
-    .telefone-tela {
-      height: 108px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(93, 181, 255, 0.24);
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at 50% 30%, rgba(22, 135, 255, 0.15), transparent 45%),
-        linear-gradient(145deg, #010d1a, #092848);
-      box-shadow: inset 0 0 30px rgba(22, 135, 255, 0.08);
-    }
-
-    .telefone-tela img {
+    .tech-logo-mini img {
       width: 145px;
       height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 7px 12px rgba(0, 0, 0, 0.38));
+      filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.32));
     }
 
-    .telefone-teclas {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    .tech-card-central h3 {
+      color: var(--branco);
+      font-size: 1.22rem;
+      line-height: 1.2;
+      letter-spacing: -0.45px;
+    }
+
+    .tech-card-central p {
+      margin-top: 10px;
+      color: #b9c8d9;
+      font-size: 0.78rem;
+      line-height: 1.55;
+    }
+
+    .tech-status {
+      display: flex;
+      align-items: center;
       gap: 9px;
-      width: 190px;
-      margin: 24px 0 0 auto;
+      margin-top: 17px;
+      color: #dce8f6;
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
     }
 
-    .telefone-teclas span {
-      height: 25px;
-      border-radius: 7px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.035));
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: inset 0 -5px 8px rgba(0, 0, 0, 0.24);
-    }
-
-    .telefone-direcional {
-      position: absolute;
-      right: 34px;
-      bottom: 40px;
-      width: 70px;
-      height: 70px;
+    .tech-status span {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background:
-        radial-gradient(circle at 38% 34%, rgba(255, 255, 255, 0.12), transparent 22%),
-        linear-gradient(145deg, #2d445c, #0a1422);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.04);
+      background: #35e982;
+      box-shadow: 0 0 14px rgba(53, 233, 130, 0.82);
+      animation: pontoPulso 1.6s ease-in-out infinite;
     }
 
-    .ponto-rede {
+    .tech-no {
       position: absolute;
-      z-index: 7;
-      width: 64px;
-      height: 64px;
+      z-index: 5;
+      width: 74px;
+      height: 74px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--azul-claro);
-      border: 1px solid rgba(93, 181, 255, 0.62);
-      border-radius: 50%;
+      border: 1px solid rgba(93, 181, 255, 0.44);
+      border-radius: 22px;
       background:
-        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.07), transparent 28%),
-        rgba(4, 28, 53, 0.68);
+        radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.09), transparent 28%),
+        rgba(4, 23, 43, 0.68);
       box-shadow:
-        0 0 22px rgba(22, 135, 255, 0.22),
-        0 14px 32px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(8px);
+        0 0 28px rgba(22, 135, 255, 0.17),
+        0 18px 38px rgba(0, 0, 0, 0.24);
+      backdrop-filter: blur(11px);
+      -webkit-backdrop-filter: blur(11px);
+      animation: flutuarNo 4.5s ease-in-out infinite;
     }
 
-    .ponto-rede.whats {
-      color: #42e275;
-      border-color: rgba(66, 226, 117, 0.55);
-      box-shadow:
-        0 0 22px rgba(66, 226, 117, 0.18),
-        0 14px 32px rgba(0, 0, 0, 0.25);
+    .tech-no .icone {
+      width: 32px;
+      height: 32px;
     }
 
-    .ponto-rede.laranja {
+    .tech-no.telefone {
+      left: 30px;
+      top: 172px;
+      animation-delay: 0.1s;
+    }
+
+    .tech-no.whatsapp {
+      right: 24px;
+      top: 155px;
+      color: #43e27b;
+      border-color: rgba(67, 226, 123, 0.44);
+      animation-delay: 0.7s;
+    }
+
+    .tech-no.nuvem {
+      left: 50%;
+      top: 32px;
+      width: 92px;
+      height: 70px;
+      transform: translateX(-50%);
       color: var(--laranja-claro);
-      border-color: rgba(255, 122, 0, 0.68);
-      box-shadow:
-        0 0 22px rgba(255, 122, 0, 0.22),
-        0 14px 32px rgba(0, 0, 0, 0.25);
+      border-color: rgba(255, 122, 0, 0.55);
+      border-radius: 24px;
+      animation-delay: 0.4s;
     }
 
-    .ponto-rede .icone {
-      width: 29px;
-      height: 29px;
+    .tech-no.servidor {
+      left: 72px;
+      bottom: 58px;
+      color: var(--laranja-claro);
+      border-color: rgba(255, 122, 0, 0.42);
+      animation-delay: 1s;
     }
 
-    .ponto-1 {
-      top: 130px;
-      left: 36px;
+    .tech-no.escudo {
+      right: 82px;
+      bottom: 54px;
+      animation-delay: 1.25s;
     }
 
-    .ponto-2 {
+    .tech-chip {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 999px;
+      color: #dfeaf7;
+      background: rgba(3, 16, 31, 0.48);
+      backdrop-filter: blur(10px);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.35px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .tech-chip span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--laranja);
+      box-shadow: 0 0 12px rgba(255, 122, 0, 0.88);
+    }
+
+    .tech-chip.um {
+      left: 8px;
+      top: 82px;
+      animation: chipFloat 5s ease-in-out infinite;
+    }
+
+    .tech-chip.dois {
+      right: 0;
+      bottom: 134px;
+      animation: chipFloat 5s ease-in-out infinite reverse;
+    }
+
+    .anel {
+      position: absolute;
+      z-index: 2;
+      border-radius: 50%;
+      border: 1px solid rgba(93, 181, 255, 0.16);
+      animation: girar 18s linear infinite;
+    }
+
+    .anel.um {
+      left: 66px;
+      top: 66px;
+      width: 430px;
+      height: 430px;
+    }
+
+    .anel.dois {
+      left: 112px;
       top: 112px;
-      right: 40px;
+      width: 340px;
+      height: 340px;
+      border-color: rgba(255, 122, 0, 0.11);
+      animation-duration: 24s;
+      animation-direction: reverse;
     }
 
-    .ponto-3 {
-      right: 34px;
-      top: 252px;
+    .anel::before,
+    .anel::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--azul-claro);
+      box-shadow: 0 0 16px rgba(93, 181, 255, 0.9);
     }
 
-    .ponto-4 {
-      right: 75px;
-      bottom: 36px;
-      border-radius: 18px;
+    .anel::before {
+      top: 30px;
+      left: 74px;
+    }
+
+    .anel::after {
+      right: 50px;
+      bottom: 88px;
+      background: var(--laranja);
+      box-shadow: 0 0 16px rgba(255, 122, 0, 0.9);
+    }
+
+    @keyframes linhaMove {
+      to {
+        stroke-dashoffset: -180;
+      }
+    }
+
+    @keyframes pontoPulso {
+      0%, 100% {
+        opacity: 0.72;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.18);
+      }
+    }
+
+    @keyframes flutuarCentral {
+      0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) translateY(-12px);
+      }
+    }
+
+    @keyframes flutuarNo {
+      0%, 100% {
+        translate: 0 0;
+      }
+
+      50% {
+        translate: 0 -12px;
+      }
+    }
+
+    @keyframes chipFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes orbitaPulso {
+      0%, 100% {
+        opacity: 0.65;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.035);
+      }
+    }
+
+    @keyframes brilhoCentral {
+      from {
+        opacity: 0.72;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes girar {
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* SERVIÇOS */
@@ -1142,8 +1337,8 @@
       }
 
       .hero-grid {
-        grid-template-columns: minmax(0, 1fr) 430px;
-        gap: 38px;
+        grid-template-columns: minmax(0, 1fr) 455px;
+        gap: 36px;
       }
 
       .hero-diferenciais {
@@ -1156,6 +1351,10 @@
 
       .faixa-grid {
         grid-template-columns: repeat(3, 1fr);
+      }
+
+      .tech-orbita {
+        transform: scale(0.88);
       }
     }
 
@@ -1218,6 +1417,11 @@
 
       .hero-arte {
         min-height: 470px;
+        margin-top: 8px;
+      }
+
+      .tech-orbita {
+        transform: scale(0.92);
       }
 
       .servicos-grid {
@@ -1274,90 +1478,102 @@
       }
 
       .hero-arte {
-        min-height: 390px;
-        transform: scale(0.92);
-        transform-origin: center top;
+        min-height: 365px;
+        margin-top: 10px;
       }
 
-      .telefone-ip {
-        width: 260px;
-        margin-top: 76px;
+      .tech-orbita {
+        width: 360px;
+        height: 360px;
+        transform: scale(0.96);
       }
 
-      .telefone-fone {
-        left: -42px;
-        width: 60px;
-        height: 208px;
+      .tech-orbita::after {
+        width: 295px;
+        height: 295px;
       }
 
-      .telefone-corpo {
-        min-height: 250px;
-        padding: 23px 21px 20px;
+      .anel.um {
+        left: 34px;
+        top: 35px;
+        width: 300px;
+        height: 300px;
       }
 
-      .telefone-tela {
-        height: 88px;
+      .anel.dois {
+        left: 76px;
+        top: 76px;
+        width: 220px;
+        height: 220px;
       }
 
-      .telefone-tela img {
-        width: 118px;
+      .tech-card-central {
+        width: 220px;
+        min-height: 165px;
+        padding: 21px;
       }
 
-      .telefone-teclas {
-        width: 145px;
-        gap: 7px;
+      .tech-logo-mini {
+        width: 116px;
+        height: 46px;
+        margin-bottom: 10px;
       }
 
-      .telefone-teclas span {
-        height: 22px;
+      .tech-logo-mini img {
+        width: 116px;
       }
 
-      .telefone-direcional {
-        width: 56px;
-        height: 56px;
-        right: 28px;
-        bottom: 36px;
+      .tech-card-central h3 {
+        font-size: 1rem;
       }
 
-      .nuvem-laranja {
-        width: 112px;
-        height: 78px;
-        top: 18px;
+      .tech-card-central p {
+        font-size: 0.7rem;
       }
 
-      .nuvem-laranja svg {
-        width: 112px;
-        height: 78px;
+      .tech-status {
+        font-size: 0.64rem;
       }
 
-      .ponto-rede {
-        width: 50px;
-        height: 50px;
+      .tech-no {
+        width: 55px;
+        height: 55px;
+        border-radius: 17px;
       }
 
-      .ponto-rede .icone {
-        width: 23px;
-        height: 23px;
+      .tech-no .icone {
+        width: 25px;
+        height: 25px;
       }
 
-      .ponto-1 {
-        top: 105px;
-        left: 10px;
+      .tech-no.telefone {
+        left: 4px;
+        top: 127px;
       }
 
-      .ponto-2 {
-        top: 91px;
-        right: 10px;
-      }
-
-      .ponto-3 {
-        right: 22px;
-        top: 205px;
-      }
-
-      .ponto-4 {
+      .tech-no.whatsapp {
         right: 4px;
-        bottom: 46px;
+        top: 120px;
+      }
+
+      .tech-no.nuvem {
+        width: 68px;
+        height: 55px;
+        top: 4px;
+      }
+
+      .tech-no.servidor {
+        left: 28px;
+        bottom: 26px;
+      }
+
+      .tech-no.escudo {
+        right: 28px;
+        bottom: 23px;
+      }
+
+      .tech-chip {
+        display: none;
       }
 
       section {
@@ -1393,6 +1609,16 @@
         bottom: 16px;
         width: 54px;
         height: 54px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -1534,74 +1760,85 @@
 
         <div class="hero-arte" aria-hidden="true">
 
-          <svg class="rede-svg" viewBox="0 0 560 500" preserveAspectRatio="none">
-            <path d="M80 330 C150 240 250 330 310 220 S440 150 500 70" stroke="rgba(22,135,255,.35)" stroke-width="2" fill="none"/>
-            <path d="M120 120 C215 175 265 95 360 145 S470 230 520 300" stroke="rgba(255,122,0,.32)" stroke-width="2" stroke-dasharray="6 8" fill="none"/>
-            <path d="M120 400 L245 305 L365 355 L485 260" stroke="rgba(93,181,255,.22)" stroke-width="2" fill="none"/>
-            <circle cx="120" cy="400" r="5" fill="#1687ff"/>
-            <circle cx="245" cy="305" r="5" fill="#ff7a00"/>
-            <circle cx="365" cy="355" r="5" fill="#1687ff"/>
-            <circle cx="485" cy="260" r="5" fill="#ff7a00"/>
-          </svg>
+          <div class="tech-orbita">
 
-          <div class="nuvem-laranja">
-            <svg viewBox="0 0 160 100" aria-hidden="true">
-              <path d="M48 76H120c18 0 30-11 30-27 0-15-11-26-26-27C118 9 105 2 90 2 74 2 60 12 55 27c-3-1-7-2-11-2-17 0-31 13-31 30 0 13 8 21 35 21Z"/>
+            <div class="anel um"></div>
+            <div class="anel dois"></div>
+
+            <svg class="linhas-tech" viewBox="0 0 560 520" preserveAspectRatio="none">
+              <path class="linha-azul" d="M86 190 C155 84 256 112 281 260 C306 406 438 392 500 174"/>
+              <path class="linha-laranja" d="M278 74 C408 118 438 210 289 262 C151 310 116 381 178 448"/>
+              <path class="linha-suave" d="M64 292 C166 220 225 225 281 260 C358 310 428 286 512 232"/>
+              <path class="linha-suave" d="M202 82 C220 180 232 232 281 260 C323 286 352 350 373 438"/>
+              <circle class="ponto-svg" cx="86" cy="190" r="5"/>
+              <circle class="ponto-svg laranja" cx="278" cy="74" r="5"/>
+              <circle class="ponto-svg" cx="500" cy="174" r="5"/>
+              <circle class="ponto-svg laranja" cx="178" cy="448" r="5"/>
+              <circle class="ponto-svg" cx="373" cy="438" r="5"/>
             </svg>
 
-            <svg class="icone" viewBox="0 0 24 24">
-              <path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.5A3.3 3.3 0 0 0 7 18Z"/>
-              <path d="M10 13h4"/>
-            </svg>
-          </div>
+            <div class="tech-chip um">
+              <span></span>
+              RAMAIS ONLINE
+            </div>
 
-          <div class="ponto-rede ponto-1">
-            <svg class="icone" viewBox="0 0 24 24">
-              <rect x="7" y="3" width="10" height="18" rx="2"/>
-              <path d="M10 17h4"/>
-            </svg>
-          </div>
+            <div class="tech-chip dois">
+              <span></span>
+              AUTOMAÇÃO ATIVA
+            </div>
 
-          <div class="ponto-rede ponto-2">
-            <svg class="icone" viewBox="0 0 24 24">
-              <path d="M7 9a5 5 0 0 1 10 0"/>
-              <path d="M7 9h10v9H7z"/>
-              <path d="M10 13h.01M14 13h.01"/>
-            </svg>
-          </div>
+            <div class="tech-no nuvem">
+              <svg class="icone" viewBox="0 0 24 24">
+                <path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.5A3.3 3.3 0 0 0 7 18Z"/>
+              </svg>
+            </div>
 
-          <div class="ponto-rede ponto-3 whats">
-            <svg class="icone" viewBox="0 0 24 24">
-              <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
-            </svg>
-          </div>
+            <div class="tech-no telefone">
+              <svg class="icone" viewBox="0 0 24 24">
+                <path d="M6.6 2h3l1.5 5-2.2 1.4a16 16 0 0 0 6.7 6.7l1.4-2.2 5 1.5v3a3 3 0 0 1-3.2 3A18.8 18.8 0 0 1 3.6 5.2 3 3 0 0 1 6.6 2Z"/>
+              </svg>
+            </div>
 
-          <div class="ponto-rede ponto-4 laranja">
-            <svg class="icone" viewBox="0 0 24 24">
-              <rect x="4" y="5" width="16" height="5" rx="1"/>
-              <rect x="4" y="14" width="16" height="5" rx="1"/>
-              <path d="M7 7.5h.01M7 16.5h.01"/>
-            </svg>
-          </div>
+            <div class="tech-no whatsapp">
+              <svg class="icone" viewBox="0 0 24 24">
+                <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
+              </svg>
+            </div>
 
-          <div class="telefone-ip">
-            <div class="telefone-fone"></div>
+            <div class="tech-no servidor">
+              <svg class="icone" viewBox="0 0 24 24">
+                <rect x="4" y="5" width="16" height="5" rx="1"/>
+                <rect x="4" y="14" width="16" height="5" rx="1"/>
+                <path d="M7 7.5h.01M7 16.5h.01"/>
+              </svg>
+            </div>
 
-            <div class="telefone-corpo">
+            <div class="tech-no escudo">
+              <svg class="icone" viewBox="0 0 24 24">
+                <path d="M12 3 5 6v5c0 4.5 2.8 8.5 7 10 4.2-1.5 7-5.5 7-10V6l-7-3Z"/>
+              </svg>
+            </div>
 
-              <div class="telefone-tela">
+            <div class="tech-card-central">
+
+              <div class="tech-logo-mini">
                 <img src="assets/img/logo-kdtec.png" alt="">
               </div>
 
-              <div class="telefone-teclas">
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
+              <h3>Telefonia IP, automação e TI conectadas</h3>
+
+              <p>
+                Ambientes integrados para comunicação, suporte,
+                monitoramento e processos digitais.
+              </p>
+
+              <div class="tech-status">
+                <span></span>
+                Operação monitorada
               </div>
 
-              <div class="telefone-direcional"></div>
-
             </div>
+
           </div>
 
         </div>
