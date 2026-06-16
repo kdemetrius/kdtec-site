@@ -4,16 +4,13 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>KDTEC | Telefonia IP, Automação e Soluções em TI</title>
 
   <meta
     name="description"
-    content="Telefonia IP, automação, redes, servidores, monitoramento e suporte técnico para empresas."
+    content="Telefonia IP, automação com WhatsApp, redes, servidores, monitoramento e suporte técnico para empresas."
   >
 
   <meta name="theme-color" content="#03101f">
@@ -22,24 +19,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
 
   <style>
     :root {
-      --azul-fundo: #03101f;
-      --azul-fundo-2: #061a31;
-      --azul-fundo-3: #0a2d55;
+      --azul-noite: #020b16;
+      --azul-profundo: #04182e;
+      --azul-medio: #082f59;
       --azul: #1687ff;
       --azul-claro: #5db5ff;
       --laranja: #ff7a00;
       --laranja-claro: #ff9c3a;
       --branco: #ffffff;
-      --cinza-claro: #f4f7fb;
+      --gelo: #f4f7fb;
       --cinza: #aeb9c8;
       --texto: #172033;
-      --texto-secundario: #667085;
+      --texto-suave: #667085;
       --borda-clara: #e5eaf1;
       --borda-escura: rgba(255, 255, 255, 0.12);
       --sombra: 0 22px 60px rgba(5, 20, 40, 0.16);
@@ -54,7 +51,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 92px;
     }
 
     body {
@@ -100,14 +97,79 @@
       stroke-linejoin: round;
     }
 
+    .botao {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 24px;
+      border: 0;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .botao-principal {
+      color: var(--branco);
+      background: linear-gradient(135deg, var(--laranja), var(--laranja-claro));
+      box-shadow: 0 14px 32px rgba(255, 122, 0, 0.25);
+    }
+
+    .botao-principal:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(255, 122, 0, 0.35);
+    }
+
+    .botao-secundario {
+      color: var(--branco);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.42);
+    }
+
+    .botao-secundario:hover {
+      transform: translateY(-3px);
+      border-color: var(--azul-claro);
+      background: rgba(22, 135, 255, 0.11);
+    }
+
+    .secao-tag {
+      color: var(--laranja);
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .secao-cabecalho {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .secao-cabecalho h2 {
+      margin-top: 10px;
+      color: var(--texto);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 1.18;
+      letter-spacing: -1.35px;
+    }
+
+    .secao-cabecalho p {
+      margin-top: 15px;
+      color: var(--texto-suave);
+    }
+
     /* CABEÇALHO */
 
     .site-header {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
       z-index: 1000;
+      width: 100%;
       background: rgba(3, 16, 31, 0.93);
       border-bottom: 1px solid var(--borda-escura);
       backdrop-filter: blur(16px);
@@ -119,7 +181,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 34px;
+      gap: 30px;
     }
 
     .logo {
@@ -139,16 +201,16 @@
     .site-nav {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 27px;
       margin-left: auto;
     }
 
     .site-nav a {
       position: relative;
       color: #e7edf5;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.45px;
       text-transform: uppercase;
     }
 
@@ -179,7 +241,7 @@
       border-radius: 999px;
       color: var(--branco);
       font-size: 0.86rem;
-      font-weight: 700;
+      font-weight: 800;
       transition: 0.25s ease;
     }
 
@@ -187,6 +249,11 @@
       background: var(--laranja);
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(255, 122, 0, 0.25);
+    }
+
+    .botao-header .icone {
+      width: 21px;
+      height: 21px;
     }
 
     .menu-mobile {
@@ -235,26 +302,13 @@
 
     .hero {
       position: relative;
-      min-height: 690px;
-      padding: 142px 0 72px;
+      min-height: 705px;
+      padding: 142px 0 74px;
       color: var(--branco);
       background:
-        radial-gradient(
-          circle at 82% 32%,
-          rgba(22, 135, 255, 0.23),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 73% 67%,
-          rgba(255, 122, 0, 0.1),
-          transparent 23%
-        ),
-        linear-gradient(
-          125deg,
-          #020b16 0%,
-          #04182e 55%,
-          #082f59 100%
-        );
+        radial-gradient(circle at 79% 33%, rgba(22, 135, 255, 0.24), transparent 31%),
+        radial-gradient(circle at 73% 68%, rgba(255, 122, 0, 0.12), transparent 23%),
+        linear-gradient(125deg, #020b16 0%, #04182e 54%, #082f59 100%);
       overflow: hidden;
     }
 
@@ -262,28 +316,33 @@
       content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.28;
+      opacity: 0.3;
       pointer-events: none;
       background-image:
-        linear-gradient(
-          rgba(255, 255, 255, 0.025) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.025) 1px,
-          transparent 1px
-        );
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
       background-size: 48px 48px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -180px;
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(22, 135, 255, 0.12), transparent 65%);
+      pointer-events: none;
     }
 
     .hero-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(400px, 0.92fr);
+      grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.96fr);
       align-items: center;
-      gap: 65px;
+      gap: 62px;
     }
 
     .hero-conteudo {
@@ -301,7 +360,7 @@
       color: var(--laranja-claro);
       background: rgba(255, 122, 0, 0.07);
       font-size: 0.74rem;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.9px;
       text-transform: uppercase;
     }
@@ -317,9 +376,9 @@
 
     .hero h1 {
       max-width: 720px;
-      font-size: clamp(2.75rem, 4.2vw, 4rem);
+      font-size: clamp(2.85rem, 4.15vw, 4.05rem);
       line-height: 1.08;
-      letter-spacing: -2.3px;
+      letter-spacing: -2.35px;
       text-wrap: balance;
     }
 
@@ -347,295 +406,288 @@
       margin-top: 31px;
     }
 
-    .botao {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 24px;
-      border: 0;
-      border-radius: 9px;
-      font-size: 0.91rem;
-      font-weight: 800;
-      transition: 0.25s ease;
-    }
-
-    .botao-principal {
-      color: var(--branco);
-      background:
-        linear-gradient(
-          135deg,
-          var(--laranja),
-          var(--laranja-claro)
-        );
-      box-shadow: 0 14px 32px rgba(255, 122, 0, 0.25);
-    }
-
-    .botao-principal:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 38px rgba(255, 122, 0, 0.35);
-    }
-
-    .botao-secundario {
-      color: var(--branco);
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-    }
-
-    .botao-secundario:hover {
-      transform: translateY(-3px);
-      border-color: var(--azul-claro);
-      background: rgba(22, 135, 255, 0.1);
-    }
-
     .hero-diferenciais {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 21px;
-      max-width: 690px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 780px;
       margin-top: 42px;
     }
 
     .diferencial {
-      min-height: 74px;
-      padding: 4px 10px 4px 15px;
-      border-left: 3px solid var(--laranja);
+      min-height: 78px;
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+    }
+
+    .diferencial-icone {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      color: var(--laranja);
+    }
+
+    .diferencial-icone .icone {
+      width: 31px;
+      height: 31px;
+      stroke-width: 1.7;
     }
 
     .diferencial strong {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       color: var(--branco);
-      font-size: 0.87rem;
+      font-size: 0.86rem;
     }
 
     .diferencial span {
       display: block;
       color: #aab8c8;
-      font-size: 0.74rem;
-      line-height: 1.55;
+      font-size: 0.72rem;
+      line-height: 1.5;
     }
 
-    /* ILUSTRAÇÃO */
+    /* HERO ARTE */
 
-    .hero-visual {
+    .hero-arte {
       position: relative;
-      min-height: 445px;
+      min-height: 455px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .visual-glow {
+    .cidade {
       position: absolute;
-      width: 390px;
-      height: 390px;
-      border-radius: 50%;
+      inset: auto 0 8px;
+      height: 250px;
+      opacity: 0.5;
       background:
-        radial-gradient(
-          circle,
-          rgba(22, 135, 255, 0.2),
-          rgba(22, 135, 255, 0.04) 45%,
-          transparent 70%
+        linear-gradient(to top, rgba(2, 11, 22, 0.9), transparent 48%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(93, 181, 255, 0.18) 0 2px,
+          transparent 2px 28px
         );
+      mask-image: linear-gradient(to top, black, transparent);
     }
 
-    .visual-orbita {
+    .rede-linhas {
       position: absolute;
-      width: 390px;
-      height: 390px;
-      border: 1px solid rgba(93, 181, 255, 0.24);
-      border-radius: 50%;
+      inset: 20px 0 0;
+      opacity: 0.9;
     }
 
-    .visual-orbita::before,
-    .visual-orbita::after {
+    .nuvem-central {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      z-index: 6;
+      width: 142px;
+      height: 94px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(255, 122, 0, 0.92);
+      border-radius: 44px;
+      color: var(--branco);
+      background: rgba(255, 122, 0, 0.08);
+      box-shadow:
+        0 0 26px rgba(255, 122, 0, 0.45),
+        inset 0 0 28px rgba(255, 122, 0, 0.1);
+    }
+
+    .nuvem-central::before,
+    .nuvem-central::after {
       content: "";
       position: absolute;
-      border-radius: 50%;
+      top: -22px;
+      border: 2px solid rgba(255, 122, 0, 0.92);
+      border-bottom: 0;
+      background: #061a31;
     }
 
-    .visual-orbita::before {
-      inset: 48px;
-      border: 1px dashed rgba(255, 122, 0, 0.36);
+    .nuvem-central::before {
+      left: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50% 50% 0 0;
     }
 
-    .visual-orbita::after {
-      inset: 102px;
-      border: 1px solid rgba(93, 181, 255, 0.15);
+    .nuvem-central::after {
+      right: 30px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50% 50% 0 0;
     }
 
-    .telefone-card {
+    .nuvem-central .icone {
       position: relative;
-      z-index: 3;
-      width: 270px;
-      min-height: 315px;
-      padding: 30px 28px 24px;
-      border: 1px solid rgba(93, 181, 255, 0.33);
-      border-radius: 30px;
+      z-index: 2;
+      width: 35px;
+      height: 35px;
+      color: var(--branco);
+    }
+
+    .telefone-hero {
+      position: relative;
+      z-index: 5;
+      width: 320px;
+      margin-top: 95px;
+      transform: rotate(-1deg);
+      filter: drop-shadow(0 34px 48px rgba(0, 0, 0, 0.48));
+    }
+
+    .telefone-corpo {
+      position: relative;
+      width: 100%;
+      min-height: 292px;
+      padding: 28px 29px 24px;
+      border: 1px solid rgba(93, 181, 255, 0.35);
+      border-radius: 28px;
       background:
-        linear-gradient(
-          150deg,
-          rgba(15, 60, 107, 0.98),
-          rgba(3, 17, 32, 0.98)
-        );
+        linear-gradient(145deg, #15283c, #060f1c 56%, #020812);
       box-shadow:
-        0 35px 90px rgba(0, 0, 0, 0.46),
-        0 0 55px rgba(22, 135, 255, 0.13);
+        inset 0 0 32px rgba(255, 255, 255, 0.055),
+        0 0 60px rgba(22, 135, 255, 0.13);
+    }
+
+    .telefone-corpo::before {
+      content: "";
+      position: absolute;
+      left: -55px;
+      top: 18px;
+      width: 72px;
+      height: 245px;
+      border-radius: 42px;
+      background: linear-gradient(145deg, #203950, #060d17);
+      box-shadow:
+        inset 9px 0 18px rgba(255, 255, 255, 0.06),
+        inset -12px 0 18px rgba(0, 0, 0, 0.3);
     }
 
     .telefone-tela {
       height: 104px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       border: 1px solid rgba(93, 181, 255, 0.25);
       border-radius: 17px;
       background:
-        linear-gradient(
-          145deg,
-          rgba(1, 13, 26, 0.95),
-          rgba(9, 40, 72, 0.95)
-        );
+        radial-gradient(circle at 50% 30%, rgba(22, 135, 255, 0.14), transparent 45%),
+        linear-gradient(145deg, #010d1a, #092848);
     }
 
-    .telefone-tela-logo {
-      font-size: 1.42rem;
-      font-weight: 800;
-    }
-
-    .telefone-tela-logo span {
-      color: var(--azul);
-    }
-
-    .telefone-tela small {
-      margin-top: 6px;
-      color: var(--azul-claro);
-      font-size: 0.67rem;
+    .telefone-tela img {
+      width: 142px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 7px 12px rgba(0, 0, 0, 0.35));
     }
 
     .telefone-teclas {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 9px;
-      width: 155px;
-      margin: 26px auto 0;
+      width: 190px;
+      margin: 24px 0 0 auto;
     }
 
     .telefone-teclas span {
-      height: 27px;
+      height: 25px;
       border-radius: 7px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.13),
-          rgba(255, 255, 255, 0.03)
-        );
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.035));
       border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 -5px 8px rgba(0, 0, 0, 0.24);
     }
 
-    .telefone-base {
-      width: 185px;
-      height: 17px;
-      margin: 24px auto 0;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.32);
-      filter: blur(2px);
-    }
-
-    .visual-ponto {
+    .telefone-direcional {
       position: absolute;
-      z-index: 4;
-      width: 66px;
-      height: 66px;
+      right: 33px;
+      bottom: 39px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #2b4258, #0a1422);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.04);
+    }
+
+    .ponto-rede {
+      position: absolute;
+      z-index: 7;
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(93, 181, 255, 0.38);
-      border-radius: 19px;
       color: var(--azul-claro);
-      background: rgba(4, 28, 53, 0.94);
-      box-shadow: 0 17px 35px rgba(0, 0, 0, 0.32);
+      border: 1px solid rgba(93, 181, 255, 0.65);
+      border-radius: 50%;
+      background: rgba(4, 28, 53, 0.64);
+      box-shadow: 0 0 22px rgba(22, 135, 255, 0.22);
     }
 
-    .visual-ponto.laranja {
+    .ponto-rede.whats {
+      color: #42e275;
+    }
+
+    .ponto-rede.laranja {
       color: var(--laranja-claro);
-      border-color: rgba(255, 122, 0, 0.54);
+      border-color: rgba(255, 122, 0, 0.7);
+      box-shadow: 0 0 22px rgba(255, 122, 0, 0.22);
     }
 
-    .visual-ponto-1 {
-      top: 28px;
-      right: 62px;
+    .ponto-1 {
+      top: 115px;
+      left: 48px;
     }
 
-    .visual-ponto-2 {
-      top: 92px;
-      left: 10px;
+    .ponto-2 {
+      top: 95px;
+      right: 55px;
     }
 
-    .visual-ponto-3 {
-      right: 15px;
-      bottom: 37px;
+    .ponto-3 {
+      right: 54px;
+      top: 225px;
     }
 
-    .visual-ponto-4 {
-      left: 8px;
-      bottom: 52px;
+    .ponto-4 {
+      right: 24px;
+      bottom: 55px;
+      border-radius: 18px;
     }
 
-    /* SEÇÕES */
+    .ponto-rede .icone {
+      width: 29px;
+      height: 29px;
+    }
+
+    /* SERVIÇOS */
 
     section {
       padding: 88px 0;
     }
 
-    .secao-cabecalho {
-      max-width: 760px;
-      margin: 0 auto 48px;
-      text-align: center;
-    }
-
-    .secao-tag {
-      color: var(--laranja);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-    }
-
-    .secao-cabecalho h2 {
-      margin-top: 10px;
-      color: var(--texto);
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      line-height: 1.2;
-      letter-spacing: -1.3px;
-    }
-
-    .secao-cabecalho p {
-      margin-top: 15px;
-      color: var(--texto-secundario);
-    }
-
-    /* SERVIÇOS */
-
     .servicos {
-      background: var(--cinza-claro);
+      background: var(--gelo);
     }
 
     .servicos-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 23px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .servico-card {
       position: relative;
-      min-height: 280px;
-      padding: 31px;
+      min-height: 248px;
+      padding: 29px 25px;
       border: 1px solid var(--borda-clara);
-      border-radius: 17px;
+      border-radius: 16px;
       background: var(--branco);
       box-shadow: 0 12px 35px rgba(23, 32, 51, 0.055);
       overflow: hidden;
@@ -649,12 +701,7 @@
       left: 0;
       width: 100%;
       height: 4px;
-      background:
-        linear-gradient(
-          90deg,
-          var(--azul),
-          var(--laranja)
-        );
+      background: linear-gradient(90deg, var(--azul), var(--laranja));
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.28s ease;
@@ -670,12 +717,12 @@
     }
 
     .servico-icone {
-      width: 54px;
-      height: 54px;
+      width: 52px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       border-radius: 15px;
       color: var(--azul);
       background: rgba(22, 135, 255, 0.09);
@@ -688,23 +735,149 @@
 
     .servico-card h3 {
       margin-bottom: 11px;
-      font-size: 1.08rem;
+      font-size: 1rem;
+      line-height: 1.3;
     }
 
     .servico-card p {
-      color: var(--texto-secundario);
-      font-size: 0.9rem;
-      line-height: 1.7;
+      color: var(--texto-suave);
+      font-size: 0.84rem;
+      line-height: 1.68;
     }
 
     .servico-link {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      margin-top: 19px;
+      margin-top: 18px;
       color: var(--laranja);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    /* INSTITUCIONAL */
+
+    .institucional {
+      position: relative;
+      color: var(--branco);
+      background:
+        radial-gradient(circle at 85% 45%, rgba(22, 135, 255, 0.22), transparent 34%),
+        linear-gradient(135deg, #020b15, #061d38);
+      overflow: hidden;
+    }
+
+    .institucional-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .institucional h2 {
+      max-width: 470px;
+      margin-top: 10px;
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      line-height: 1.14;
+      letter-spacing: -1.2px;
+    }
+
+    .institucional p {
+      max-width: 530px;
+      margin-top: 20px;
+      color: #bdcad8;
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+
+    .botao-contorno-laranja {
+      margin-top: 25px;
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border: 1px solid var(--laranja);
+      border-radius: 8px;
+      color: var(--laranja-claro);
       font-size: 0.84rem;
-      font-weight: 800;
+      font-weight: 900;
+      transition: 0.25s ease;
+    }
+
+    .botao-contorno-laranja:hover {
+      color: var(--branco);
+      background: var(--laranja);
+    }
+
+    .numeros-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .numero-card {
+      min-height: 145px;
+      padding: 26px 21px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.045);
+      transition: 0.25s ease;
+    }
+
+    .numero-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .numero-card .icone {
+      width: 30px;
+      height: 30px;
+      color: var(--laranja);
+      margin-bottom: 14px;
+    }
+
+    .numero-card strong {
+      display: block;
+      color: var(--branco);
+      font-size: 1.95rem;
+      line-height: 1;
+    }
+
+    .numero-card span {
+      display: block;
+      margin-top: 10px;
+      color: #d4dee9;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .faixa-diferenciais {
+      padding: 29px 0;
+      color: var(--branco);
+      background: #06192e;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .faixa-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .faixa-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 58px;
+      color: #dce6f0;
+      font-size: 0.83rem;
+      line-height: 1.35;
+    }
+
+    .faixa-item .icone {
+      flex: 0 0 30px;
+      width: 30px;
+      height: 30px;
+      color: var(--laranja);
     }
 
     /* MONITORAMENTO */
@@ -713,21 +886,9 @@
       position: relative;
       color: var(--branco);
       background:
-        radial-gradient(
-          circle at 13% 50%,
-          rgba(255, 122, 0, 0.08),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 82% 35%,
-          rgba(22, 135, 255, 0.18),
-          transparent 30%
-        ),
-        linear-gradient(
-          135deg,
-          #020b15,
-          #061b34
-        );
+        radial-gradient(circle at 13% 50%, rgba(255, 122, 0, 0.08), transparent 28%),
+        radial-gradient(circle at 82% 35%, rgba(22, 135, 255, 0.18), transparent 30%),
+        linear-gradient(135deg, #020b15, #061b34);
       overflow: hidden;
     }
 
@@ -744,9 +905,9 @@
 
     .monitoramento h2 {
       margin-top: 11px;
-      font-size: clamp(2.1rem, 3.6vw, 3.25rem);
+      font-size: clamp(2.05rem, 3.4vw, 3rem);
       line-height: 1.14;
-      letter-spacing: -1.5px;
+      letter-spacing: -1.4px;
     }
 
     .monitoramento-texto {
@@ -781,7 +942,7 @@
       color: var(--laranja);
       background: rgba(255, 122, 0, 0.11);
       font-size: 0.8rem;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .monitoramento-acoes {
@@ -793,12 +954,7 @@
       padding: 11px;
       border: 1px solid rgba(93, 181, 255, 0.22);
       border-radius: 20px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.08),
-          rgba(255, 255, 255, 0.025)
-        );
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
       box-shadow:
         0 32px 75px rgba(0, 0, 0, 0.38),
         0 0 60px rgba(22, 135, 255, 0.08);
@@ -812,12 +968,7 @@
       top: -2px;
       left: 38px;
       border-radius: 999px;
-      background:
-        linear-gradient(
-          90deg,
-          var(--azul),
-          var(--laranja)
-        );
+      background: linear-gradient(90deg, var(--azul), var(--laranja));
     }
 
     .monitoramento-imagem {
@@ -837,73 +988,11 @@
       text-align: center;
     }
 
-    /* SOBRE */
-
-    .sobre {
-      background: var(--branco);
-    }
-
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      align-items: center;
-      gap: 66px;
-    }
-
-    .sobre h2 {
-      max-width: 600px;
-      margin-top: 10px;
-      font-size: clamp(2.1rem, 3.5vw, 3.2rem);
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-    }
-
-    .sobre-texto {
-      max-width: 610px;
-      margin-top: 20px;
-      color: var(--texto-secundario);
-      line-height: 1.75;
-    }
-
-    .numeros-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 17px;
-    }
-
-    .numero-card {
-      min-height: 150px;
-      padding: 27px;
-      border: 1px solid var(--borda-clara);
-      border-radius: 15px;
-      background: var(--cinza-claro);
-      transition: 0.25s ease;
-    }
-
-    .numero-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 38px rgba(8, 22, 42, 0.08);
-    }
-
-    .numero-card strong {
-      display: block;
-      color: var(--laranja);
-      font-size: 1.75rem;
-    }
-
-    .numero-card span {
-      display: block;
-      margin-top: 6px;
-      color: var(--texto-secundario);
-      font-size: 0.86rem;
-      line-height: 1.55;
-    }
-
     /* CHAMADA */
 
     .chamada {
       padding: 76px 0;
-      background: var(--cinza-claro);
+      background: var(--gelo);
     }
 
     .chamada-box {
@@ -915,12 +1004,7 @@
       gap: 42px;
       border-radius: 22px;
       color: var(--branco);
-      background:
-        linear-gradient(
-          120deg,
-          #f56d00,
-          #ff982d
-        );
+      background: linear-gradient(120deg, #f56d00, #ff982d);
       box-shadow: 0 20px 55px rgba(255, 122, 0, 0.24);
       overflow: hidden;
     }
@@ -956,7 +1040,7 @@
       position: relative;
       z-index: 1;
       flex-shrink: 0;
-      color: var(--azul-fundo);
+      color: var(--azul-noite);
       background: var(--branco);
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13);
     }
@@ -975,7 +1059,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.45fr 0.8fr 1fr;
+      grid-template-columns: 1.35fr 0.8fr 1fr;
       gap: 52px;
     }
 
@@ -1016,8 +1100,6 @@
       font-size: 0.78rem;
     }
 
-    /* WHATSAPP */
-
     .whatsapp-flutuante {
       position: fixed;
       right: 22px;
@@ -1046,28 +1128,38 @@
 
     /* RESPONSIVO */
 
-    @media (max-width: 1050px) {
+    @media (max-width: 1130px) {
+      .site-nav {
+        gap: 19px;
+      }
+
+      .site-nav a {
+        font-size: 0.72rem;
+      }
+
+      .servicos-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .hero-grid {
-        grid-template-columns: minmax(0, 1fr) 390px;
+        grid-template-columns: minmax(0, 1fr) 430px;
         gap: 38px;
       }
 
-      .visual-orbita {
-        width: 350px;
-        height: 350px;
+      .hero-diferenciais {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .telefone-card {
-        width: 245px;
-        min-height: 295px;
+      .numeros-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .monitoramento-grid {
-        gap: 38px;
+      .faixa-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 930px) {
       .header-content {
         min-height: 78px;
       }
@@ -1115,13 +1207,17 @@
       }
 
       .hero-grid,
-      .sobre-grid,
+      .institucional-grid,
       .monitoramento-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-visual {
-        min-height: 420px;
+      .hero-conteudo {
+        max-width: 760px;
+      }
+
+      .hero-arte {
+        min-height: 470px;
       }
 
       .servicos-grid {
@@ -1130,10 +1226,6 @@
 
       .monitoramento-conteudo {
         max-width: 700px;
-      }
-
-      .monitoramento-imagem-box {
-        max-width: 900px;
       }
     }
 
@@ -1156,7 +1248,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(2.4rem, 12vw, 3.15rem);
+        font-size: clamp(2.35rem, 12vw, 3.1rem);
         letter-spacing: -1.8px;
       }
 
@@ -1173,28 +1265,31 @@
         width: 100%;
       }
 
-      .hero-diferenciais {
+      .hero-diferenciais,
+      .servicos-grid,
+      .numeros-grid,
+      .faixa-grid,
+      .footer-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
       }
 
-      .diferencial {
-        min-height: auto;
+      .hero-arte {
+        min-height: 390px;
       }
 
-      .hero-visual {
-        min-height: 355px;
+      .telefone-hero {
+        width: 260px;
+        margin-top: 75px;
       }
 
-      .visual-orbita {
-        width: 295px;
-        height: 295px;
+      .telefone-corpo {
+        min-height: 250px;
       }
 
-      .telefone-card {
-        width: 210px;
-        min-height: 270px;
-        padding: 23px 21px 20px;
+      .telefone-corpo::before {
+        left: -42px;
+        width: 60px;
+        height: 208px;
       }
 
       .telefone-tela {
@@ -1202,46 +1297,62 @@
       }
 
       .telefone-teclas {
-        width: 132px;
+        width: 145px;
         gap: 7px;
       }
 
       .telefone-teclas span {
+        height: 22px;
+      }
+
+      .telefone-direcional {
+        width: 56px;
+        height: 56px;
+        right: 28px;
+        bottom: 36px;
+      }
+
+      .nuvem-central {
+        width: 112px;
+        height: 78px;
+      }
+
+      .ponto-rede {
+        width: 50px;
+        height: 50px;
+      }
+
+      .ponto-rede .icone {
+        width: 23px;
         height: 23px;
       }
 
-      .visual-ponto {
-        width: 53px;
-        height: 53px;
-        border-radius: 15px;
+      .ponto-1 {
+        top: 102px;
+        left: 10px;
+      }
+
+      .ponto-2 {
+        top: 91px;
+        right: 10px;
+      }
+
+      .ponto-3 {
+        right: 22px;
+        top: 200px;
+      }
+
+      .ponto-4 {
+        right: 4px;
+        bottom: 46px;
       }
 
       section {
         padding: 72px 0;
       }
 
-      .servicos-grid,
-      .numeros-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
       .servico-card {
         min-height: auto;
-      }
-
-      .monitoramento-imagem-box {
-        padding: 7px;
-        border-radius: 14px;
-      }
-
-      .monitoramento-imagem {
-        border-radius: 9px;
-        aspect-ratio: 16 / 8;
-      }
-
-      .monitoramento-legenda {
-        font-size: 0.68rem;
       }
 
       .chamada-box {
@@ -1254,24 +1365,21 @@
         width: 100%;
       }
 
+      .monitoramento-imagem-box {
+        padding: 7px;
+        border-radius: 14px;
+      }
+
+      .monitoramento-imagem {
+        border-radius: 9px;
+        aspect-ratio: 16 / 8;
+      }
+
       .whatsapp-flutuante {
         right: 16px;
         bottom: 16px;
         width: 54px;
         height: 54px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
       }
     }
   </style>
@@ -1283,27 +1391,24 @@
     <div class="container header-content">
 
       <a href="#inicio" class="logo" aria-label="Página inicial da KDTEC">
-        <img
-          src="assets/img/logo-kdtec.png"
-          alt="KDTEC"
-          class="logo-imagem"
-        >
+        <img src="assets/img/logo-kdtec.png" alt="KDTEC" class="logo-imagem">
       </a>
 
       <nav class="site-nav" id="menu-principal">
         <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
+        <a href="#telefonia-ip">Telefonia IP</a>
+        <a href="#automacao">Automação</a>
+        <a href="#ti-redes">TI e Redes</a>
         <a href="#monitoramento">Monitoramento</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <a
-        class="botao-header"
-        href="https://wa.me/5585988446126"
-        target="_blank"
-        rel="noopener"
-      >
+      <a class="botao-header" href="https://wa.me/5585988446126" target="_blank" rel="noopener">
+        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
+          <path d="M8.4 8.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.4 2.4.3.2.5.2.7 0l.8-1"/>
+        </svg>
         WhatsApp
       </a>
 
@@ -1327,9 +1432,7 @@
 
         <div class="hero-conteudo">
 
-          <div class="hero-selo">
-            Tecnologia para empresas
-          </div>
+          <div class="hero-selo">Soluções para empresas</div>
 
           <h1>
             Tecnologia que conecta.<br>
@@ -1337,24 +1440,25 @@
           </h1>
 
           <p class="hero-texto">
-            Telefonia IP, automação, redes, monitoramento e soluções
-            completas em TI para empresas que buscam eficiência,
+            Telefonia IP, automação com WhatsApp, redes, monitoramento
+            e soluções completas em TI para empresas que buscam eficiência,
             segurança e crescimento.
           </p>
 
           <div class="hero-botoes">
 
-            <a
-              class="botao botao-principal"
-              href="https://wa.me/5585988446126"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="botao botao-principal" href="https://wa.me/5585988446126" target="_blank" rel="noopener">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
+              </svg>
               Fale conosco no WhatsApp
             </a>
 
-            <a class="botao botao-secundario" href="#servicos">
-              Conheça nossas soluções
+            <a class="botao botao-secundario" href="tel:+5585988446126">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.6 2h3l1.5 5-2.2 1.4a16 16 0 0 0 6.7 6.7l1.4-2.2 5 1.5v3a3 3 0 0 1-3.2 3A18.8 18.8 0 0 1 3.6 5.2 3 3 0 0 1 6.6 2Z"/>
+              </svg>
+              (85) 98844-6126
             </a>
 
           </div>
@@ -1362,89 +1466,125 @@
           <div class="hero-diferenciais">
 
             <div class="diferencial">
-              <strong>Confiabilidade</strong>
-              <span>Soluções robustas e seguras para sua operação.</span>
+              <div class="diferencial-icone">
+                <svg class="icone" viewBox="0 0 24 24">
+                  <path d="M12 3 5 6v5c0 4.5 2.8 8.5 7 10 4.2-1.5 7-5.5 7-10V6l-7-3Z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Confiabilidade</strong>
+                <span>Soluções robustas e seguras.</span>
+              </div>
             </div>
 
             <div class="diferencial">
-              <strong>Atendimento técnico</strong>
-              <span>Suporte próximo e especializado.</span>
+              <div class="diferencial-icone">
+                <svg class="icone" viewBox="0 0 24 24">
+                  <path d="m5 16 4-10 2 6 6-4-4 10-2-6-6 4Z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Desempenho</strong>
+                <span>Tecnologia que otimiza processos.</span>
+              </div>
             </div>
 
             <div class="diferencial">
-              <strong>Experiência</strong>
-              <span>Atuação no mercado desde 2008.</span>
+              <div class="diferencial-icone">
+                <svg class="icone" viewBox="0 0 24 24">
+                  <path d="M4 13a8 8 0 0 1 16 0"/>
+                  <path d="M5 13h3v5H5zM16 13h3v5h-3z"/>
+                  <path d="M19 18c0 2-2.5 3-5 3"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Suporte especializado</strong>
+                <span>Atendimento técnico próximo.</span>
+              </div>
+            </div>
+
+            <div class="diferencial">
+              <div class="diferencial-icone">
+                <svg class="icone" viewBox="0 0 24 24">
+                  <path d="M4 20V10M10 20V4M16 20v-7M22 20V8"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Desde 2008</strong>
+                <span>Mais de 15 anos de experiência.</span>
+              </div>
             </div>
 
           </div>
 
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
+        <div class="hero-arte" aria-hidden="true">
 
-          <div class="visual-glow"></div>
-          <div class="visual-orbita"></div>
+          <div class="cidade"></div>
 
-          <div class="visual-ponto visual-ponto-1">
+          <svg class="rede-linhas" viewBox="0 0 640 460" preserveAspectRatio="none">
+            <path d="M80 320 C170 250 250 335 330 260 S500 225 590 110" stroke="rgba(22,135,255,.35)" stroke-width="2" fill="none"/>
+            <path d="M145 130 C245 190 330 105 430 160 S545 230 600 290" stroke="rgba(255,122,0,.32)" stroke-width="2" stroke-dasharray="5 8" fill="none"/>
+            <path d="M120 370 L260 290 L390 335 L560 250" stroke="rgba(93,181,255,.24)" stroke-width="2" fill="none"/>
+            <circle cx="120" cy="370" r="5" fill="#1687ff"/>
+            <circle cx="260" cy="290" r="5" fill="#ff7a00"/>
+            <circle cx="390" cy="335" r="5" fill="#1687ff"/>
+            <circle cx="560" cy="250" r="5" fill="#ff7a00"/>
+          </svg>
 
+          <div class="nuvem-central">
             <svg class="icone" viewBox="0 0 24 24">
               <path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.5A3.3 3.3 0 0 0 7 18Z"/>
+              <path d="M10 13h4"/>
             </svg>
-
           </div>
 
-          <div class="visual-ponto visual-ponto-2 laranja">
-
+          <div class="ponto-rede ponto-1">
             <svg class="icone" viewBox="0 0 24 24">
               <rect x="7" y="3" width="10" height="18" rx="2"/>
               <path d="M10 17h4"/>
             </svg>
-
           </div>
 
-          <div class="visual-ponto visual-ponto-3 laranja">
-
+          <div class="ponto-rede ponto-2">
             <svg class="icone" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>
+              <path d="M7 9a5 5 0 0 1 10 0"/>
+              <path d="M7 9h10v9H7z"/>
+              <path d="M10 13h.01M14 13h.01"/>
             </svg>
-
           </div>
 
-          <div class="visual-ponto visual-ponto-4">
-
+          <div class="ponto-rede ponto-3 whats">
             <svg class="icone" viewBox="0 0 24 24">
-              <path d="M6.6 2h3l1.5 5-2.2 1.4a16 16 0 0 0 6.7 6.7l1.4-2.2 5 1.5v3a3 3 0 0 1-3.2 3A18.8 18.8 0 0 1 3.6 5.2 3 3 0 0 1 6.6 2Z"/>
+              <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
             </svg>
-
           </div>
 
-          <div class="telefone-card">
+          <div class="ponto-rede ponto-4 laranja">
+            <svg class="icone" viewBox="0 0 24 24">
+              <rect x="4" y="5" width="16" height="5" rx="1"/>
+              <rect x="4" y="14" width="16" height="5" rx="1"/>
+              <path d="M7 7.5h.01M7 16.5h.01"/>
+            </svg>
+          </div>
 
-            <div class="telefone-tela">
+          <div class="telefone-hero">
+            <div class="telefone-corpo">
 
-              <div class="telefone-tela-logo">
-                <span>KD</span>TEC
+              <div class="telefone-tela">
+                <img src="assets/img/logo-kdtec.png" alt="">
               </div>
 
-              <small>Telefonia IP em nuvem</small>
+              <div class="telefone-teclas">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+
+              <div class="telefone-direcional"></div>
 
             </div>
-
-            <div class="telefone-teclas">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <div class="telefone-base"></div>
-
           </div>
 
         </div>
@@ -1456,151 +1596,86 @@
       <div class="container">
 
         <div class="secao-cabecalho">
-
-          <span class="secao-tag">
-            Nossos serviços
-          </span>
-
-          <h2>
-            Soluções completas para sua empresa
-          </h2>
-
+          <span class="secao-tag">Nossos serviços</span>
+          <h2>Soluções completas para sua empresa</h2>
           <p>
-            Tecnologia aplicada de forma prática para melhorar
-            a comunicação, a segurança e a produtividade do seu negócio.
+            Estrutura, comunicação, automação e suporte técnico em uma abordagem
+            prática, segura e adequada à realidade de cada cliente.
           </p>
-
         </div>
 
         <div class="servicos-grid">
 
-          <article class="servico-card">
-
+          <article class="servico-card" id="telefonia-ip">
             <div class="servico-icone">
               <svg class="icone" viewBox="0 0 24 24">
                 <path d="M6.6 2h3l1.5 5-2.2 1.4a16 16 0 0 0 6.7 6.7l1.4-2.2 5 1.5v3a3 3 0 0 1-3.2 3A18.8 18.8 0 0 1 3.6 5.2 3 3 0 0 1 6.6 2Z"/>
               </svg>
             </div>
-
             <h3>Telefonia IP</h3>
-
             <p>
-              Centrais com FreePBX, Issabel e Asterisk, ramais remotos,
-              troncos SIP e migração de sistemas telefônicos.
+              Centrais IP com FreePBX, Issabel e Asterisk, ramais remotos,
+              troncos SIP e migração de sistemas.
             </p>
-
-            <a class="servico-link" href="#contato">
-              Saiba mais →
-            </a>
-
+            <a class="servico-link" href="#contato">Saiba mais →</a>
           </article>
 
-          <article class="servico-card">
-
+          <article class="servico-card" id="automacao">
             <div class="servico-icone">
               <svg class="icone" viewBox="0 0 24 24">
                 <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.7 9.7 0 0 1-3.9-.9L3 20.5l1.6-4.8a8.4 8.4 0 1 1 16.4-4.2Z"/>
               </svg>
             </div>
-
             <h3>Automação e WhatsApp</h3>
-
             <p>
-              Automatização de atendimentos e processos com integração
-              entre WhatsApp, n8n e sistemas empresariais.
+              Atendimento automatizado, avisos internos, integrações com n8n
+              e fluxos personalizados.
             </p>
-
-            <a class="servico-link" href="#contato">
-              Saiba mais →
-            </a>
-
+            <a class="servico-link" href="#contato">Saiba mais →</a>
           </article>
 
-          <article class="servico-card">
-
+          <article class="servico-card" id="ti-redes">
             <div class="servico-icone">
               <svg class="icone" viewBox="0 0 24 24">
                 <rect x="3" y="4" width="18" height="12" rx="2"/>
                 <path d="M8 20h8M12 16v4"/>
               </svg>
             </div>
-
             <h3>TI e Redes</h3>
-
             <p>
-              Manutenção, cabeamento estruturado, redes Wi-Fi, servidores,
-              VPN, acesso remoto e monitoramento.
+              Manutenção, cabeamento, Wi-Fi, servidores, VPN, acesso remoto,
+              monitoramento e backup.
             </p>
-
-            <a class="servico-link" href="#contato">
-              Saiba mais →
-            </a>
-
+            <a class="servico-link" href="#contato">Saiba mais →</a>
           </article>
 
           <article class="servico-card">
-
             <div class="servico-icone">
               <svg class="icone" viewBox="0 0 24 24">
                 <path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.5A3.3 3.3 0 0 0 7 18Z"/>
               </svg>
             </div>
-
             <h3>Soluções em Nuvem</h3>
-
             <p>
-              Servidores em nuvem, backup remoto, acesso seguro,
-              disponibilidade e infraestrutura sob medida.
+              Servidores em nuvem, backup remoto, acesso seguro
+              e infraestrutura sob medida.
             </p>
-
-            <a class="servico-link" href="#contato">
-              Saiba mais →
-            </a>
-
+            <a class="servico-link" href="#contato">Saiba mais →</a>
           </article>
 
           <article class="servico-card">
-
             <div class="servico-icone">
               <svg class="icone" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="3"/>
                 <path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>
               </svg>
             </div>
-
             <h3>Suporte e Manutenção</h3>
-
             <p>
-              Atendimento técnico para garantir continuidade,
-              segurança e desempenho dos equipamentos.
+              Atendimento técnico especializado para continuidade,
+              segurança e estabilidade da operação.
             </p>
-
-            <a class="servico-link" href="#contato">
-              Saiba mais →
-            </a>
-
-          </article>
-
-          <article class="servico-card">
-
-            <div class="servico-icone">
-              <svg class="icone" viewBox="0 0 24 24">
-                <path d="m9 12 2 2 4-4"/>
-                <circle cx="12" cy="12" r="9"/>
-              </svg>
-            </div>
-
-            <h3>Projetos Personalizados</h3>
-
-            <p>
-              Planejamento e implantação de soluções adequadas
-              à estrutura e às necessidades de cada empresa.
-            </p>
-
-            <a class="servico-link" href="#contato">
-              Saiba mais →
-            </a>
-
+            <a class="servico-link" href="#contato">Saiba mais →</a>
           </article>
 
         </div>
@@ -1608,18 +1683,122 @@
       </div>
     </section>
 
+    <section class="institucional" id="sobre">
+      <div class="container institucional-grid">
+
+        <div>
+          <span class="secao-tag">Sobre a KDTEC</span>
+          <h2>Inovação e compromisso com resultados</h2>
+          <p>
+            Desde 2008, a KDTEC entrega soluções tecnológicas que ajudam empresas
+            a se comunicarem melhor, trabalharem com mais segurança e crescerem
+            de forma sustentável.
+          </p>
+          <p>
+            Atuamos em Fortaleza e outras localidades com telefonia IP,
+            automação, infraestrutura de TI, redes e suporte técnico.
+          </p>
+          <a class="botao-contorno-laranja" href="#contato">Conheça nossa história</a>
+        </div>
+
+        <div class="numeros-grid">
+
+          <div class="numero-card">
+            <svg class="icone" viewBox="0 0 24 24">
+              <rect x="4" y="5" width="16" height="15" rx="2"/>
+              <path d="M8 3v4M16 3v4M4 10h16"/>
+            </svg>
+            <strong>2008</strong>
+            <span>Ano de início das atividades.</span>
+          </div>
+
+          <div class="numero-card">
+            <svg class="icone" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.9"/>
+              <path d="M16 3.1a4 4 0 0 1 0 7.8"/>
+            </svg>
+            <strong>+15</strong>
+            <span>Anos de experiência técnica.</span>
+          </div>
+
+          <div class="numero-card">
+            <svg class="icone" viewBox="0 0 24 24">
+              <path d="m9 12 2 2 4-4"/>
+              <circle cx="12" cy="12" r="9"/>
+            </svg>
+            <strong>Projetos</strong>
+            <span>Soluções personalizadas por cliente.</span>
+          </div>
+
+          <div class="numero-card">
+            <svg class="icone" viewBox="0 0 24 24">
+              <path d="M4 13a8 8 0 0 1 16 0"/>
+              <path d="M5 13h3v5H5zM16 13h3v5h-3z"/>
+              <path d="M19 18c0 2-2.5 3-5 3"/>
+            </svg>
+            <strong>Suporte</strong>
+            <span>Atendimento próximo e especializado.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="faixa-diferenciais">
+      <div class="container faixa-grid">
+
+        <div class="faixa-item">
+          <svg class="icone" viewBox="0 0 24 24">
+            <path d="M12 21s7-4.5 7-11a7 7 0 0 0-14 0c0 6.5 7 11 7 11Z"/>
+            <circle cx="12" cy="10" r="2"/>
+          </svg>
+          <span>Atendimento em Fortaleza e Região</span>
+        </div>
+
+        <div class="faixa-item">
+          <svg class="icone" viewBox="0 0 24 24">
+            <path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"/>
+            <path d="m8.5 14.5-1.5 6 5-3 5 3-1.5-6"/>
+          </svg>
+          <span>Equipe técnica experiente</span>
+        </div>
+
+        <div class="faixa-item">
+          <svg class="icone" viewBox="0 0 24 24">
+            <path d="m12 2 3 7h7l-5.6 4.2 2.1 7L12 16l-6.5 4.2 2.1-7L2 9h7l3-7Z"/>
+          </svg>
+          <span>Tecnologia de ponta e boas práticas</span>
+        </div>
+
+        <div class="faixa-item">
+          <svg class="icone" viewBox="0 0 24 24">
+            <path d="M9 3h6v6H9zM3 15h6v6H3zM15 15h6v6h-6z"/>
+            <path d="M12 9v3M6 15v-3h12v3"/>
+          </svg>
+          <span>Soluções personalizadas para o negócio</span>
+        </div>
+
+        <div class="faixa-item">
+          <svg class="icone" viewBox="0 0 24 24">
+            <path d="M12 3 5 6v5c0 4.5 2.8 8.5 7 10 4.2-1.5 7-5.5 7-10V6l-7-3Z"/>
+          </svg>
+          <span>Foco em segurança e estabilidade</span>
+        </div>
+
+      </div>
+    </div>
+
     <section class="monitoramento" id="monitoramento">
       <div class="container monitoramento-grid">
 
         <div class="monitoramento-conteudo">
 
-          <span class="secao-tag">
-            Monitoramento operacional
-          </span>
+          <span class="secao-tag">Monitoramento operacional</span>
 
-          <h2>
-            Visibilidade em tempo real para ambientes de telefonia
-          </h2>
+          <h2>Visibilidade em tempo real para ambientes de telefonia</h2>
 
           <p class="monitoramento-texto">
             A KDTEC desenvolve painéis personalizados para acompanhamento
@@ -1648,16 +1827,9 @@
           </div>
 
           <div class="monitoramento-acoes">
-
-            <a
-              class="botao botao-principal"
-              href="https://wa.me/5585988446126"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="botao botao-principal" href="https://wa.me/5585988446126" target="_blank" rel="noopener">
               Conheça esta solução
             </a>
-
           </div>
 
         </div>
@@ -1680,83 +1852,20 @@
       </div>
     </section>
 
-    <section class="sobre" id="sobre">
-      <div class="container sobre-grid">
-
-        <div>
-
-          <span class="secao-tag">
-            Sobre a KDTEC
-          </span>
-
-          <h2>
-            Experiência técnica com compromisso e proximidade
-          </h2>
-
-          <p class="sobre-texto">
-            Desde 2008, a KDTEC desenvolve e mantém soluções tecnológicas
-            para empresas que precisam se comunicar melhor, proteger sua
-            infraestrutura e operar com mais eficiência.
-          </p>
-
-          <p class="sobre-texto">
-            Nosso trabalho une conhecimento técnico, atendimento próximo
-            e soluções adequadas à realidade de cada cliente.
-          </p>
-
-        </div>
-
-        <div class="numeros-grid">
-
-          <div class="numero-card">
-            <strong>2008</strong>
-            <span>Ano de início das atividades da KDTEC.</span>
-          </div>
-
-          <div class="numero-card">
-            <strong>IP</strong>
-            <span>Especialização em telefonia e comunicação empresarial.</span>
-          </div>
-
-          <div class="numero-card">
-            <strong>TI</strong>
-            <span>Infraestrutura, redes, servidores e suporte técnico.</span>
-          </div>
-
-          <div class="numero-card">
-            <strong>Cloud</strong>
-            <span>Soluções modernas, seguras e preparadas para crescer.</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
     <section class="chamada" id="contato">
       <div class="container">
 
         <div class="chamada-box">
 
           <div>
-
-            <h2>
-              Vamos melhorar a tecnologia da sua empresa?
-            </h2>
-
+            <h2>Vamos melhorar a tecnologia da sua empresa?</h2>
             <p>
               Converse com a KDTEC e descubra uma solução adequada
               para sua estrutura.
             </p>
-
           </div>
 
-          <a
-            class="botao"
-            href="https://wa.me/5585988446126"
-            target="_blank"
-            rel="noopener"
-          >
+          <a class="botao" href="https://wa.me/5585988446126" target="_blank" rel="noopener">
             Solicitar atendimento
           </a>
 
@@ -1773,56 +1882,37 @@
       <div class="footer-grid">
 
         <div>
-
-          <img
-            src="assets/img/logo-kdtec.png"
-            alt="KDTEC"
-            class="logo-rodape"
-          >
-
+          <img src="assets/img/logo-kdtec.png" alt="KDTEC" class="logo-rodape">
           <p class="footer-texto">
             Telefonia IP, automação, redes, servidores, monitoramento
             e suporte técnico para empresas.
           </p>
-
         </div>
 
         <div>
-
-          <h3 class="footer-titulo">
-            Navegação
-          </h3>
-
+          <h3 class="footer-titulo">Navegação</h3>
           <div class="footer-links">
             <a href="#inicio">Início</a>
-            <a href="#servicos">Serviços</a>
+            <a href="#telefonia-ip">Telefonia IP</a>
+            <a href="#automacao">Automação</a>
+            <a href="#ti-redes">TI e Redes</a>
             <a href="#monitoramento">Monitoramento</a>
             <a href="#sobre">Sobre a KDTEC</a>
             <a href="#contato">Contato</a>
           </div>
-
         </div>
 
         <div>
-
-          <h3 class="footer-titulo">
-            Contato
-          </h3>
-
+          <h3 class="footer-titulo">Contato</h3>
           <div class="footer-links">
-
-            <a
-              href="https://wa.me/5585988446126"
-              target="_blank"
-              rel="noopener"
-            >
+            <a href="https://wa.me/5585988446126" target="_blank" rel="noopener">
               WhatsApp: (85) 98844-6126
             </a>
-
+            <a href="tel:+5585988446126">
+              Telefone: (85) 98844-6126
+            </a>
             <span>Fortaleza – Ceará</span>
-
           </div>
-
         </div>
 
       </div>
@@ -1874,7 +1964,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 900) {
+      if (window.innerWidth > 930) {
         fecharMenu();
       }
     });
